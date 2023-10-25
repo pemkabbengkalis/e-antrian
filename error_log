@@ -1,0 +1,1360 @@
+[21-Oct-2023 08:32:45 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 08:37:38 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 11:07:58 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 11:08:01 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 13:43:42 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 13:48:50 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 13:53:34 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 13:54:29 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 13:55:50 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 13:56:28 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 14:22:27 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 14:28:00 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[21-Oct-2023 14:33:44 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 07:39:11 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 07:42:13 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 07:42:42 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 07:42:49 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 07:42:55 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 07:43:00 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:23:10 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:24:59 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:06 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:09 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:41 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:43 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:49 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:50 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:53 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:54 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:27:58 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 09:28:00 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:04:28 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:04:31 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:04:42 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:04:43 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:04:56 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:04:57 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:13:56 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:14:15 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:50:46 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:50:59 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:51:08 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[22-Oct-2023 19:51:21 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:02 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:04 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:07 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:08 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:10 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:14 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:16 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:19 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:34:22 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:02 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:03 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:06 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:07 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:09 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:12 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:15 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:16 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:19 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[23-Oct-2023 14:44:20 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:09 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:10 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:12 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:13 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:14 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:14 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:16 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:18 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:20 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:20 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:21 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:23 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:24 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:26 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:27 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:27 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:29 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:31 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:31 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:01:32 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:06:09 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:06:13 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:06:17 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:24:54 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:25:03 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[24-Oct-2023 17:25:12 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 09:20:49 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 09:20:56 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 09:20:57 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 09:20:58 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:31:09 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:31:43 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:36:50 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:36:57 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:37:20 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:37:31 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:40:02 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:40:29 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:40:43 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:22 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:24 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:25 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:26 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:26 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:26 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:27 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:41:27 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:49:50 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:51:15 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:51:28 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:51:43 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:52:23 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:52:56 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:58:17 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:58:23 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:58:24 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:58:25 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:59:21 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:59:28 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 11:59:42 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:02:55 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:03:30 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:03:35 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:04:04 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:05:58 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:06:01 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:06:02 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:06:03 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:07:09 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:19:47 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 12:20:41 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 13:05:38 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 13:05:41 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
+[25-Oct-2023 13:05:43 Asia/Jakarta] PHP Fatal error:  Uncaught ValueError: realpath(): Argument #1 ($path) must not contain any null bytes in /home/eantrianbengkali/public_html/system/Common.php:93
+Stack trace:
+#0 /home/eantrianbengkali/public_html/system/Common.php(93): realpath('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#1 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(524): clean_path('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#2 [internal function]: CodeIgniter\Debug\Exceptions::CodeIgniter\Debug\{closure}('\e@\ea\x01\eM\x00\x1D!\x00E-AN...')
+#3 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(509): array_map(Object(Closure), Array)
+#4 /home/eantrianbengkali/public_html/system/Debug/Exceptions.php(123): CodeIgniter\Debug\Exceptions::renderBacktrace(Array)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Exception))
+#6 {main}
+  thrown in /home/eantrianbengkali/public_html/system/Common.php on line 93
