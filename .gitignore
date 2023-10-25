@@ -57,6 +57,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 phpunit
 
 app/Config/Database.php
+app/Config/App.php
 .htaccess
 
 #-------------------------
