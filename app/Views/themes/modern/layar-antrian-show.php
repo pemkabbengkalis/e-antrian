@@ -82,7 +82,15 @@ if (@$scripts) {
 }
 // echo '<pre>'; print_r($urut); die;
 ?>
-
+<script>
+window.onload = function() {
+    var el = document.documentElement,
+        rfs = el.requestFullScreen
+        || el.webkitRequestFullScreen
+        || el.mozRequestFullScreen;
+    rfs.call(el);
+};
+</script>
 </head>
 <body>
 	<div class="block-container">
