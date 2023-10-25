@@ -17,6 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->get('/', 'Login::slideshow');
+$routes->get('/login', 'Login::login'); 
 $routes->setDefaultController('Login');
 $routes->setDefaultMethod('slideshow');
 $routes->setTranslateURIDashes(true);
