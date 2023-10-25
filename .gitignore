@@ -56,6 +56,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 # Don't save phpunit under version control.
 phpunit
 
+app/config/Database.php
+.htaccess
+
 #-------------------------
 # Composer
 #-------------------------
