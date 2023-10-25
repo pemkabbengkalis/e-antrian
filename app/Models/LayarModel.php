@@ -64,6 +64,22 @@ class LayarModel extends \App\Models\BaseModel
 		$result = $this->db->query($sql, $id)->getResultArray();
 		return $result;
 	}
+
+	public function getTujuanByAllLayarSetting() {
+		$sql = 'SELECT *, antrian_kategori.aktif AS kategori_aktif, antrian_detail.aktif AS tujuan_aktif
+				FROM antrian_kategori
+				LEFT JOIN antrian_detail USING(id_antrian_kategori)
+				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+				ORDER BY nama_antrian_tujuan ASC';
+				
+		/* $sql = 'SELECT id_antrian_detail, COUNT(*) AS jml_dipanggil FROM antrian_panggil_detail 
+				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+				WHERE tgl_panggil = "2022-07-11"
+				GROUP BY id_antrian_detail'; */
+		$result = $this->db->query($sql)->getResultArray();
+		return $result;
+	}
 	
 	public function getAwalanPanggil() {
 		$sql = 'SELECT nama_file FROM antrian_panggil_awalan';
@@ -86,6 +102,13 @@ class LayarModel extends \App\Models\BaseModel
 				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
 				WHERE id_setting_layar = ?';
 		$result = $this->db->query($sql, $id)->getResultArray();
+		return $result;
+	}
+
+	public function getAntrianKategoriByAllLayar() {
+		$sql = 'SELECT * FROM setting_layar_detail
+				LEFT JOIN antrian_kategori USING(id_antrian_kategori)';
+		$result = $this->db->query($sql)->getResultArray();
 		return $result;
 	}
 	

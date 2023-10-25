@@ -16,10 +16,9 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->get('/', 'Login::slideshow');
-$routes->get('/login', 'Login::login'); 
+$routes->get('/', 'Login::index');
 $routes->setDefaultController('Login');
-$routes->setDefaultMethod('slideshow');
+$routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
 $routes->setAutoRoute(true);

@@ -27,7 +27,7 @@ button.ambil-antrian {
 }
 
 .button-container {
-	width: 800px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: auto;

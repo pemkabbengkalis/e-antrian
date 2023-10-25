@@ -46,7 +46,7 @@ class Login extends \App\Controllers\BaseController
 	}
 
 	public function slideshow(){
-		return view('themes/modern/builtin/home');
+		return view('themes/modern/builtin/home',$this->data);
 	}
 	
 	private function login()
