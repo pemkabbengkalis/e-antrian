@@ -44,6 +44,10 @@ class Login extends \App\Controllers\BaseController
 		$this->data['style'] = ' style="max-width:375px"';
 		return view('themes/modern/builtin/login', $this->data);
 	}
+
+	public function slideshow(){
+		print "OK";
+	}
 	
 	private function login()
 	{

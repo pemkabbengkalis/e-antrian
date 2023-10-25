@@ -31,7 +31,7 @@ class Database extends \CodeIgniter\Database\Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
+		'hostname' => '10.20.30.252',
 		'username' => 'loca_antrian',
 		'password' => 'mpp@2023',
 		// 'database' => 'pos_client3',
