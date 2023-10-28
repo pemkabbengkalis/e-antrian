@@ -16,10 +16,13 @@ const db = mysql.createPool({
   database: 'loca_antrian',
 });
 
-const server = createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('WebSocket server is running');
+
+
+const server = https.createServer({
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem'),
 });
+
 
 server.on('upgrade', (request, socket, head) => {
   const { pathname, query } = parse(request.url, true); // Menggunakan 'parse' untuk mengurai URL
