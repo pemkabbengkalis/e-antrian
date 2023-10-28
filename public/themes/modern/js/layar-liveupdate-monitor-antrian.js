@@ -2,11 +2,47 @@ let i = 0;
 let current_ended = 0;
 let audio_ended = true;
 let audio_object = [];
-
 let current_added = [];
 const data_layar_antrian = [];
 current_volume = '';
- $(document).ready(function() {
+
+
+
+//WEBSOCKET
+var idSettingLayar = $('#id-setting-layar').text();
+var websocketURL = 'ws://10.20.30.252:8080?id=' + idSettingLayar;
+
+function connectWebSocket() {
+    var socket = new WebSocket(websocketURL);
+
+    socket.addEventListener('open', function (event) {
+        console.log('Koneksi WebSocket terbuka.');
+    });
+
+    socket.addEventListener('message', function (event) {
+        console.log('Pesan dari server:', event.data);
+    });
+
+    socket.addEventListener('close', function (event) {
+        if (event.wasClean) {
+            console.log('Koneksi WebSocket ditutup dengan bersih, kode: ' + event.code + ', alasan: ' + event.reason);
+        } else {
+            console.error('Koneksi WebSocket terputus. Mencoba menghubungkan ulang dalam 5 detik.');
+            setTimeout(connectWebSocket, 5000); // Coba menghubungkan ulang dalam 5 detik.
+        }
+    });
+
+    socket.addEventListener('error', function (event) {
+        console.error('Terjadi kesalahan koneksi WebSocket:', event);
+    });
+}
+
+connectWebSocket();
+
+
+
+///
+//  $(document).ready(function() {
 	 
 	// function check_current_antrian() 
 	// {
@@ -335,4 +371,4 @@ current_volume = '';
 	// }
 	
 	// check_perubahan_antrian();
- });
+//  });
