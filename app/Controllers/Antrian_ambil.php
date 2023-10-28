@@ -152,7 +152,7 @@ class Antrian_ambil extends \App\Controllers\BaseController
 		
 		$antrian = $this->model->ambilAntrian($id);
 		if ($antrian) {
-			// $this->cetakAntrian($antrian);
+			$this->cetakAntrian($antrian);
 			$message['status'] = 'ok';
 			$message['data'] = $antrian;
 		} else {
