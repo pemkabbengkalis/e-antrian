@@ -19,8 +19,8 @@ const db = mysql.createPool({
 
 
 const server = https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
+  key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
+  cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
 });
 
 
