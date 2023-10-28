@@ -111,6 +111,6 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
 }
 
 
-server.listen(9000, () => {
+server.listen(8443, () => {
   console.log('WebSocket server is running');
 });
