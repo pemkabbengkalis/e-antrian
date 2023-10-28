@@ -61,22 +61,42 @@ class Layar extends \App\Controllers\BaseController
 		}
 		
 		$id = $_GET['id'];
-		$antrian_detail = $this->model->getTujuanByIdLayarSetting($id);
-		if (!$antrian_detail) {
-			$this->errorDataNotFound();
-		}
-		$this->data['identitas'] = $this->model->getIdentitas();
-		$query = $this->model->getSettingLayarMonitor();
-		foreach ($query as $val) {
-			$param[$val['param']] = $val['value'];
-		}
-		$this->data['setting'] = $param;
+		if($id == 'all'){
+			$antrian_detail = $this->model->getTujuanByAllLayarSetting();
+			if (!$antrian_detail) {
+				$this->errorDataNotFound();
+			}
+			$this->data['identitas'] = $this->model->getIdentitas();
+			$query = $this->model->getSettingLayarMonitor();
+			foreach ($query as $val) {
+				$param[$val['param']] = $val['value'];
+			}
+			$this->data['setting'] = $param;
+				
+			// $this->data['antrian_detail'] = $antrian_detail;
+			$this->data['antrian_kategori'] = $this->model->getAntrianKategoriByAllLayar();
+			// $this->data['urut'] = $this->model->getAntrianUrut($id);
 			
-		// $this->data['antrian_detail'] = $antrian_detail;
-		$this->data['antrian_kategori'] = $this->model->getAntrianKategoriByIdLayar($id);
-		// $this->data['urut'] = $this->model->getAntrianUrut($id);
+			echo view('themes/modern/layar-antrian-show.php', $this->data);
+		}else{
+			$antrian_detail = $this->model->getTujuanByIdLayarSetting($id);
+			if (!$antrian_detail) {
+				$this->errorDataNotFound();
+			}
+			$this->data['identitas'] = $this->model->getIdentitas();
+			$query = $this->model->getSettingLayarMonitor();
+			foreach ($query as $val) {
+				$param[$val['param']] = $val['value'];
+			}
+			$this->data['setting'] = $param;
+				
+			// $this->data['antrian_detail'] = $antrian_detail;
+			$this->data['antrian_kategori'] = $this->model->getAntrianKategoriByIdLayar($id);
+			// $this->data['urut'] = $this->model->getAntrianUrut($id);
+			
+			echo view('themes/modern/layar-antrian-show.php', $this->data);
+		}
 		
-		echo view('themes/modern/layar-antrian-show.php', $this->data);
 	}
 	
 	public function ajaxGetFormPilihPrinter() {
