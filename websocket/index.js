@@ -108,6 +108,6 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
 }
 
 
-server.listen(() => {
+server.listen(8443, () => {
   console.log('WebSocket server is running on ws://e-antrian.bengkaliskab.go.id:8080');
 });
