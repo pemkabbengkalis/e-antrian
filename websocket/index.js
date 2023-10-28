@@ -1,6 +1,6 @@
 
 
-import { createServer } from 'https'; // Menggunakan 'http' daripada 'https'
+const https = require('https'); // Menggunakan 'http' daripada 'https'
 import { WebSocketServer } from 'ws';
 import mysql from 'mysql2';
 import { parse } from 'url'; 
