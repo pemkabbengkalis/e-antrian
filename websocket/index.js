@@ -115,10 +115,10 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
               FROM antrian_panggil_detail
               LEFT JOIN antrian_panggil USING(id_antrian_panggil)
               LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_setting_layar = ${monitorId} AND tanggal = '2023-10-29'
+              WHERE id_setting_layar = ${monitorId} AND tanggal = ${waktu}
               GROUP BY id_antrian_detail`;
 
-            db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
+            db.query(jumlahAntrianSQL, [monitorId, waktu], (error, results) => {
               if (error) {
                 console.error('Error fetching jumlah antrian: ' + error);
               } else {
@@ -133,7 +133,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                       LEFT JOIN antrian_detail USING(id_antrian_detail)
                       LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
                       LEFT JOIN antrian_kategori ON antrian_detail.id_antrian_kategori = antrian_kategori.id_antrian_kategori
-                      WHERE tanggal =  ${currentDate} AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
+                      WHERE tanggal =  ${waktu} AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
                       ORDER BY waktu_panggil DESC LIMIT 1`;
 
                 db.query(antrianAkhir,[currentDate],(error, results) => {
