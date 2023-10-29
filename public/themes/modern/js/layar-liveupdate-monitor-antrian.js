@@ -71,59 +71,61 @@ function check_perubahan_antrian(data)
 			tujuan = data.tujuan;
 			antrian_terakhir = data.antrian_terakhir;
 
-			if (kategori) {
+			console.log("HASIL KATEGORI :",kategori);
 
-				if (kategori.aktif == 'Y') {
-					$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
-					$elm.each(function(i, elm) 
-					{
-						$(elm).find('.antrian-awalan').html(kategori.awalan);
+			// if (kategori) {
 
-						id_antrian_detail = $(elm).attr('data-id-tujuan');
-						nomor_antrian = 0;
-						if (id_antrian_detail in kategori.tujuan_panggil) {
-							nomor_antrian = kategori.tujuan_panggil[id_antrian_detail].nomor_panggil;
-						}
+			// 	if (kategori.aktif == 'Y') {
+			// 		$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
+			// 		$elm.each(function(i, elm) 
+			// 		{
+			// 			$(elm).find('.antrian-awalan').html(kategori.awalan);
 
-						$(elm).find('.nomor-antrian-dipanggil').html(nomor_antrian);
-					})
+			// 			id_antrian_detail = $(elm).attr('data-id-tujuan');
+			// 			nomor_antrian = 0;
+			// 			if (id_antrian_detail in kategori.tujuan_panggil) {
+			// 				nomor_antrian = kategori.tujuan_panggil[id_antrian_detail].nomor_panggil;
+			// 			}
 
-				} else if (kategori.aktif == 'N') 
-				{
+			// 			$(elm).find('.nomor-antrian-dipanggil').html(nomor_antrian);
+			// 		})
 
-					$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
-					$elm.each(function(i, elm) {
-						$(elm).find('.antrian-awalan').html('');
-						$(elm).find('.nomor-antrian-dipanggil').html('---');
-					})							
-				}
-			}
+			// 	} else if (kategori.aktif == 'N') 
+			// 	{
 
-			if (tujuan) {
-				if (tujuan.tujuan_aktif == 'Y') 
-				{
-					$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
-					$elm.find('.antrian-awalan').html(tujuan.awalan);
-					nomor_antrian = tujuan.tujuan_panggil?.nomor_panggil || 0;
-					$elm.find('.nomor-antrian-dipanggil').html(nomor_antrian);
+			// 		$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
+			// 		$elm.each(function(i, elm) {
+			// 			$(elm).find('.antrian-awalan').html('');
+			// 			$(elm).find('.nomor-antrian-dipanggil').html('---');
+			// 		})							
+			// 	}
+			// }
 
-				} else if (tujuan.tujuan_aktif == 'N') 
-				{
+			// if (tujuan) {
+			// 	if (tujuan.tujuan_aktif == 'Y') 
+			// 	{
+			// 		$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
+			// 		$elm.find('.antrian-awalan').html(tujuan.awalan);
+			// 		nomor_antrian = tujuan.tujuan_panggil?.nomor_panggil || 0;
+			// 		$elm.find('.nomor-antrian-dipanggil').html(nomor_antrian);
 
-					$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
-					$elm.find('.antrian-awalan').html('');
-					$elm.find('.nomor-antrian-dipanggil').html('---');							
-				}
+			// 	} else if (tujuan.tujuan_aktif == 'N') 
+			// 	{
 
-			}
+			// 		$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
+			// 		$elm.find('.antrian-awalan').html('');
+			// 		$elm.find('.nomor-antrian-dipanggil').html('---');							
+			// 	}
 
-			if (antrian_terakhir) 
-			{
-				$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
-				$('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
-			} else {
-				$('.number-one, .current-antrian-tujuan').html('---');
-			}
+			// }
+
+			// if (antrian_terakhir) 
+			// {
+			// 	$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
+			// 	$('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
+			// } else {
+			// 	$('.number-one, .current-antrian-tujuan').html('---');
+			// }
 
 			
 		
