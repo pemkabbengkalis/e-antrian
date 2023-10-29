@@ -9,7 +9,7 @@ const now = new Date();
 const year = now.getFullYear();
 const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
 const day = String(now.getDate()).padStart(2, '0');
-const currentDate = `2023-10-29`;
+const currentDate = `${year}-${month}-${day}`;
 
 
 const wss = new WebSocketServer({ noServer: true }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
@@ -71,7 +71,9 @@ function getLastAntrianUpdate(ws, monitorId) {
     } else {
       const data = results[0];
       // ws.send(JSON.stringify(currentDate));
-      getAllAntrianUpdate(ws, monitorId, data);
+      const date = new Date(data['tgl_update_kategori']);
+      const formattedDate = date.toISOString().slice(0, 10);
+      getAllAntrianUpdate(ws, monitorId, formattedDate);
     }
   });
 }
@@ -82,9 +84,9 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
     FROM antrian_kategori 
     LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
     WHERE id_setting_layar = ${monitorId}
-    AND tgl_update > ${waktu['tgl_update_kategori']}`;
+    AND tgl_update > ${waktu}`;
 
-  db.query(cekkategoriSQL, [monitorId, waktu['tgl_update_kategori']], (error, results) => {
+  db.query(cekkategoriSQL, [monitorId, waktu], (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
