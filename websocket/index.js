@@ -143,7 +143,6 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                     result.kategori.antrian_terakhir = kategori_tujuan_akhir;
                     const response = [
                       {'fungsi':'check_perubahan_antrian'},
-                      {'date':currentDate},
                       { 'status': 'ok' },
                       { 'data': result }
                     ];
