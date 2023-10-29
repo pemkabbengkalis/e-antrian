@@ -19,17 +19,14 @@ function connectWebSocket() {
         console.log('Koneksi WebSocket terbuka.');
     });
 
-    socket.addEventListener('message', function (event) {
-        //console.log('Pesan dari server:', event.data);
+	socket.addEventListener('message', function (event) {
 		var receivedData = JSON.parse(event.data);
-
-		if (receivedData.fungsi) {
-		var fungsiValue = receivedData.fungsi;
-		console.log("Value of 'fungsi':", fungsiValue);
-		}else{
-			console.log('Pesan dari server:', receivedData.fungsi);
+	
+		if (receivedData[0] && receivedData[0].fungsi) {
+			var fungsiValue = receivedData[0].fungsi;
+			console.log("Value of 'fungsi':", fungsiValue);
 		}
-    });
+	});
 
     socket.addEventListener('close', function (event) {
         if (event.wasClean) {
