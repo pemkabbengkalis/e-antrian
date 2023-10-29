@@ -5,7 +5,7 @@ import { parse } from 'url';
 import fs from 'fs';
 
 var monitorId;
-const currentDate = new Date().toISOString().slice(0, 10);
+const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
 const wss = new WebSocketServer({ noServer: true }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
 
 const db = mysql.createPool({
@@ -106,7 +106,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
               WHERE id_setting_layar = ${monitorId} AND tanggal = ${currentDate}
               GROUP BY id_antrian_detail`;
 
-            db.query(jumlahAntrianSQL, [monitorId, new Date().toISOString().slice(0, 10)], (error, results) => {
+            db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
               if (error) {
                 console.error('Error fetching jumlah antrian: ' + error);
               } else {
