@@ -21,6 +21,12 @@ function connectWebSocket() {
 
     socket.addEventListener('message', function (event) {
         console.log('Pesan dari server:', event.data);
+		var receivedData = JSON.parse(event.data);
+		
+		if (receivedData.fungsi) {
+		var fungsiValue = receivedData.fungsi;
+		console.log("Value of 'fungsi':", fungsiValue);
+		}
     });
 
     socket.addEventListener('close', function (event) {
