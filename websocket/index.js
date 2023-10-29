@@ -52,6 +52,9 @@ wss.on('connection', function connection(ws) {
   });
 });
 
+
+
+/* Cek jika perubahan pada antrian misal nama tujuan, aktif dan non aktif */
 function getLastAntrianUpdate(ws, monitorId) {
   const query = `
     SELECT 
@@ -124,6 +127,21 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                   tujuan_panggil[val.id_antrian_detail] = val;
                 });
                 result.kategori.tujuan_panggil = tujuan_panggil;
+                const antrianAkhir = `SELECT * FROM antrian_panggil_detail
+                      LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+                      LEFT JOIN antrian_detail USING(id_antrian_detail)
+                      LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+                      LEFT JOIN antrian_kategori ON antrian_detail.id_antrian_kategori = antrian_kategori.id_antrian_kategori
+                      WHERE tanggal =  ${currentDate} AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
+                      ORDER BY waktu_panggil DESC LIMIT 1`;
+
+                db.query(antrianAkhir,[currentDate],(error, results) => {
+                  if (error) {
+                  }else{
+                    const kategori_tujuan_akhir = results;
+                    result.kategori.antrian_terakhir = kategori_tujuan_akhir;
+                  }
+                });
                 const response = [
                   {'fungsi':'check_perubahan_antrian'},
                   { 'status': 'ok' },
