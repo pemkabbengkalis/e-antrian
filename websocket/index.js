@@ -112,16 +112,20 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
 
             // Jumlah antrian masing-masing tujuan
             const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
-            FROM antrian_panggil_detail
-            LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-            WHERE id_antrian_detail = ${kategori_tujuan.id_antrian_detail} AND tanggal = ${currentDate}
-            GROUP BY id_antrian_detail`;
+              FROM antrian_panggil_detail
+              LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+              LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+              WHERE id_setting_layar = '4' AND tanggal = ${currentDate}
+              GROUP BY id_antrian_detail`;
 
             db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
               if (error) {
                 console.error('Error fetching jumlah antrian: ' + error);
               } else {
-                const tujuan_panggil = results;
+                const tujuan_panggil = {};
+                results.forEach((val) => {
+                  tujuan_panggil[val.id_antrian_detail] = val;
+                });
                 result.kategori.tujuan_panggil = tujuan_panggil;
                 if (kategori || kategori_tujuan) {
                 const antrianAkhir = `SELECT * FROM antrian_panggil_detail
