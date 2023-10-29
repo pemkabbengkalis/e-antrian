@@ -125,6 +125,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                 });
                 result.kategori.tujuan_panggil = tujuan_panggil;
                 const response = [
+                  {'fungsi':'check_perubahan_antrian'},
                   { 'status': 'ok' },
                   { 'data': result }
                 ];
