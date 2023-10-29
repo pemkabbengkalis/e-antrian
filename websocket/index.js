@@ -9,7 +9,7 @@ const now = new Date();
 const year = now.getFullYear();
 const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
 const day = String(now.getDate()).padStart(2, '0');
-const currentDate = `${year}-${month}-${day}`;
+const currentDate = `2023-10-29`;
 
 
 const wss = new WebSocketServer({ noServer: true }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
@@ -110,7 +110,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
               FROM antrian_panggil_detail
               LEFT JOIN antrian_panggil USING(id_antrian_panggil)
               LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_setting_layar = ${monitorId} AND tanggal = ${currentDate}
+              WHERE id_setting_layar = ? AND tanggal = ?
               GROUP BY id_antrian_detail`;
 
             db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
