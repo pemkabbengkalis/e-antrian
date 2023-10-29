@@ -27,7 +27,7 @@ function connectWebSocket() {
 		var fungsiValue = receivedData.fungsi;
 		console.log("Value of 'fungsi':", fungsiValue);
 		}else{
-			console.log('Pesan dari server:', receivedData);
+			console.log('Pesan dari server:', receivedData.fungsi);
 		}
     });
 
