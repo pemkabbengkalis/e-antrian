@@ -5,7 +5,8 @@ import { parse } from 'url';
 import fs from 'fs';
 
 var monitorId;
-const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+const currentDate = new Date().toISOString().slice(0, 10);
+
 const wss = new WebSocketServer({ noServer: true }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
 
 const db = mysql.createPool({
