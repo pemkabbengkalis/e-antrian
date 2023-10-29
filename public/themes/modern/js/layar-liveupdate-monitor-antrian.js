@@ -71,35 +71,35 @@ function check_perubahan_antrian(data)
 			tujuan = data.tujuan;
 			antrian_terakhir = data.antrian_terakhir;
 
-			console.log("HASIL KATEGORI :",kategori);
+			console.log("HASIL AKTIF :",kategori.aktif);
 
-			// if (kategori) {
+			if (kategori) {
 
-			// 	if (kategori.aktif == 'Y') {
-			// 		$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
-			// 		$elm.each(function(i, elm) 
-			// 		{
-			// 			$(elm).find('.antrian-awalan').html(kategori.awalan);
+				if (kategori.aktif == 'Y') {
+					$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
+					$elm.each(function(i, elm) 
+					{
+						$(elm).find('.antrian-awalan').html(kategori.awalan);
 
-			// 			id_antrian_detail = $(elm).attr('data-id-tujuan');
-			// 			nomor_antrian = 0;
-			// 			if (id_antrian_detail in kategori.tujuan_panggil) {
-			// 				nomor_antrian = kategori.tujuan_panggil[id_antrian_detail].nomor_panggil;
-			// 			}
+						id_antrian_detail = $(elm).attr('data-id-tujuan');
+						nomor_antrian = 0;
+						if (id_antrian_detail in kategori.tujuan_panggil) {
+							nomor_antrian = kategori.tujuan_panggil[id_antrian_detail].nomor_panggil;
+						}
 
-			// 			$(elm).find('.nomor-antrian-dipanggil').html(nomor_antrian);
-			// 		})
+						$(elm).find('.nomor-antrian-dipanggil').html(nomor_antrian);
+					})
 
-			// 	} else if (kategori.aktif == 'N') 
-			// 	{
+				} else if (kategori.aktif == 'N') 
+				{
 
-			// 		$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
-			// 		$elm.each(function(i, elm) {
-			// 			$(elm).find('.antrian-awalan').html('');
-			// 			$(elm).find('.nomor-antrian-dipanggil').html('---');
-			// 		})							
-			// 	}
-			// }
+					$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
+					$elm.each(function(i, elm) {
+						$(elm).find('.antrian-awalan').html('');
+						$(elm).find('.nomor-antrian-dipanggil').html('---');
+					})							
+				}
+			}
 
 			// if (tujuan) {
 			// 	if (tujuan.tujuan_aktif == 'Y') 
