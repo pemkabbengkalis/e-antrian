@@ -74,40 +74,33 @@ function getLastAntrianUpdate(ws, monitorId) {
       return;
     }
     const data = results[0];
-    const jsonResponse = JSON.stringify(data);
-    ws.send(jsonResponse);
-    //getAllAntrianUpdate(ws, monitorId, data);
+    //const jsonResponse = JSON.stringify(data);
+    //ws.send(jsonResponse);
+    getAllAntrianUpdate(ws, monitorId, data);
   });
 }
 function getAllAntrianUpdate(ws, monitorId, waktu) {
   
-  // const query = `
-  // SELECT * FROM antrian_panggil_detail
-  // LEFT JOIN antrian_detail USING(id_antrian_detail)
-  // LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
-  // LEFT JOIN antrian_kategori USING(id_antrian_kategori)
-  // LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-  // LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-  // WHERE id_setting_layar = 4
-  // `;
+  // Cek Kategori
+  const cekkategori = `SELECT * 
+  FROM antrian_kategori 
+  LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
+  WHERE id_setting_layar = ${monitorId}
+  AND tgl_update > ${waktu['tgl_update_kategori']}`;
 
-  // db.query(query, [monitorId, waktu], (error, results) => {
-  //   if (error) {
-  //     console.error('Error fetching data from the database: ' + error);
-  //     return;
-  //   }
-
-  //   const data = results[0];
-
-  //   const response = {
-  //     status: 'ok',
-  //     data: data,
-  //   };
-
-  //   const jsonResponse = JSON.stringify(response);
-
-  //   ws.send(jsonResponse);
-  // });
+  db.query(cekkategori, [monitorId, waktu], (error, results) => {
+    if (error) {
+      console.error('Error fetching data from the database: ' + error);
+      return;
+    }
+    const data = results[0];
+    const response = {
+      status: 'ok',
+      data: data,
+    };
+    const jsonResponse = JSON.stringify(response);
+    ws.send(jsonResponse);
+  });
 }
 
 
