@@ -101,23 +101,23 @@ function check_perubahan_antrian(data)
 				}
 			}
 
-			// if (tujuan) {
-			// 	if (tujuan.tujuan_aktif == 'Y') 
-			// 	{
-			// 		$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
-			// 		$elm.find('.antrian-awalan').html(tujuan.awalan);
-			// 		nomor_antrian = tujuan.tujuan_panggil?.nomor_panggil || 0;
-			// 		$elm.find('.nomor-antrian-dipanggil').html(nomor_antrian);
+			if (tujuan) {
+				if (tujuan.tujuan_aktif == 'Y') 
+				{
+					$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
+					$elm.find('.antrian-awalan').html(tujuan.awalan);
+					nomor_antrian = tujuan.tujuan_panggil?.nomor_panggil || 0;
+					$elm.find('.nomor-antrian-dipanggil').html(nomor_antrian);
 
-			// 	} else if (tujuan.tujuan_aktif == 'N') 
-			// 	{
+				} else if (tujuan.tujuan_aktif == 'N') 
+				{
 
-			// 		$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
-			// 		$elm.find('.antrian-awalan').html('');
-			// 		$elm.find('.nomor-antrian-dipanggil').html('---');							
-			// 	}
+					$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
+					$elm.find('.antrian-awalan').html('');
+					$elm.find('.nomor-antrian-dipanggil').html('---');							
+				}
 
-			// }
+			}
 
 			// if (antrian_terakhir) 
 			// {
