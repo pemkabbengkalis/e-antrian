@@ -119,13 +119,13 @@ function check_perubahan_antrian(data)
 
 			}
 
-			// if (antrian_terakhir) 
-			// {
-			// 	$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
-			// 	$('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
-			// } else {
-			// 	$('.number-one, .current-antrian-tujuan').html('---');
-			// }
+			if (antrian_terakhir) 
+			{
+				$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
+				$('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
+			} else {
+				$('.number-one, .current-antrian-tujuan').html('---');
+			}
 
 			
 		
