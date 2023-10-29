@@ -27,7 +27,18 @@ function connectWebSocket() {
 			switch (fungsiValue) {
 				case 'check_perubahan_antrian':
 					console.log("jalan kan fungsi check_perubahan_antrian");
-					console.log('Data : ',receivedData[0].data);
+					if (receivedData[2] && receivedData[2].data) {
+						var dataValue = receivedData[2].data;
+						console.log("Value of 'data':", dataValue);
+			
+						// Di sini Anda dapat menggabungkan nilai 'fungsi' dan 'data' sesuai kebutuhan.
+						var combinedResult = {
+							fungsi: fungsiValue,
+							data: dataValue
+						};
+			
+						console.log("Combined Result:", combinedResult);
+					}
 					break;
 
 				default:
