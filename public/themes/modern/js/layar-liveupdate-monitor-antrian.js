@@ -27,6 +27,7 @@ function connectWebSocket() {
 			switch (fungsiValue) {
 				case 'check_perubahan_antrian':
 					console.log("jalan kan fungsi check_perubahan_antrian");
+					console.log('Data : ',receivedData[0].data);
 					break;
 
 				default:
