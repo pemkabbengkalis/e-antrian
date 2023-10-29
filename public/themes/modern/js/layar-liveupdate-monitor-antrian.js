@@ -69,7 +69,7 @@ function check_perubahan_antrian(data)
 	
 			kategori = data.kategori;
 			tujuan = data.tujuan;
-			antrian_terakhir = data.antrian_terakhir;
+			antrian_terakhir = data.kategori.antrian_terakhir;
 
 			console.log("HASIL AKTIF :",antrian_terakhir);
 
