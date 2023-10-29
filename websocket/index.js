@@ -5,7 +5,12 @@ import { parse } from 'url';
 import fs from 'fs';
 
 var monitorId;
-const currentDate = new Date().toISOString().slice(0, 10);
+const now = new Date();
+const year = now.getFullYear();
+const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+const day = String(now.getDate()).padStart(2, '0');
+const currentDate = `${year}-${month}-${day}`;
+
 
 const wss = new WebSocketServer({ noServer: true }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
 
