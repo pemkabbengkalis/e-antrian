@@ -140,15 +140,16 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                   }else{
                     const kategori_tujuan_akhir = results;
                     result.kategori.antrian_terakhir = kategori_tujuan_akhir;
+                    const response = [
+                      {'fungsi':'check_perubahan_antrian'},
+                      { 'status': 'ok' },
+                      { 'data': result }
+                    ];
+                    
+                    ws.send(JSON.stringify(response));
                   }
                 });
-                const response = [
-                  {'fungsi':'check_perubahan_antrian'},
-                  { 'status': 'ok' },
-                  { 'data': result }
-                ];
                 
-                ws.send(JSON.stringify(response));
               }
             });
           }
