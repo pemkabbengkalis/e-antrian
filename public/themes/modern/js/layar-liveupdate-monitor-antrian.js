@@ -67,9 +67,9 @@ connectWebSocket();
 function check_perubahan_antrian(data) 
 {
 	
-			kategori = data.data.kategori;
-			tujuan = data.data.tujuan;
-			antrian_terakhir = data.data.antrian_terakhir;
+			var kategori = data.data.kategori;
+			var tujuan = data.data.tujuan;
+			var antrian_terakhir = data.data.antrian_terakhir;
 
 			if (kategori) {
 
