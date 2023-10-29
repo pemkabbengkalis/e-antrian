@@ -112,7 +112,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
               FROM antrian_panggil_detail
               LEFT JOIN antrian_panggil USING(id_antrian_panggil)
               LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_setting_layar = ? AND tanggal = ?
+              WHERE id_setting_layar = ${monitorId} AND tanggal = ${currentDate}
               GROUP BY id_antrian_detail`;
 
             db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
