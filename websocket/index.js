@@ -82,25 +82,71 @@ function getLastAntrianUpdate(ws, monitorId) {
 function getAllAntrianUpdate(ws, monitorId, waktu) {
   
   // Cek Kategori
-  const cekkategori = `SELECT * 
-  FROM antrian_kategori 
-  LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
-  WHERE id_setting_layar = ${monitorId}
-  AND tgl_update > ${waktu['tgl_update_kategori']}`;
+  const cekkategoriSQL = `SELECT * 
+      FROM antrian_kategori 
+      LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
+      WHERE id_setting_layar = ?
+      AND tgl_update > ?`;
 
-  db.query(cekkategori, [monitorId, waktu], (error, results) => {
-    if (error) {
-      console.error('Error fetching data from the database: ' + error);
-      return;
-    }
-    const data = results[0];
-    const response = {
-      status: 'ok',
-      data: data,
-    };
-    const jsonResponse = JSON.stringify(response);
-    ws.send(jsonResponse);
-  });
+    db.query(cekkategoriSQL, [monitorId, waktu['tgl_update_kategori']], (error, results) => {
+      if (error) {
+        console.error('Error fetching data from the database: ' + error);
+        res.statusCode = 500;
+        res.end('Error fetching data from the database');
+      } else {
+        const kategori = results[0];
+        const result = { kategori };
+
+        if (kategori) {
+          // Kategori Tujuan
+          const kategoriTujuanSQL = `SELECT * FROM antrian_detail
+            LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+            LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+            WHERE id_antrian_kategori = ?`;
+
+          db.query(kategoriTujuanSQL, [kategori.id_antrian_kategori], (error, results) => {
+            if (error) {
+              console.error('Error fetching kategori tujuan: ' + error);
+              res.statusCode = 500;
+              res.end('Error fetching kategori tujuan');
+            } else {
+              const kategori_tujuan = results;
+              result.kategori.tujuan = kategori_tujuan;
+
+              // Jumlah antrian masing-masing tujuan
+              const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
+                FROM antrian_panggil_detail
+                LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+                LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+                WHERE id_setting_layar = ? AND tanggal = ?
+                GROUP BY id_antrian_detail`;
+
+              db.query(jumlahAntrianSQL, [monitorId, new Date().toISOString().slice(0, 10)], (error, results) => {
+                if (error) {
+                  console.error('Error fetching jumlah antrian: ' + error);
+                  res.statusCode = 500;
+                  res.end('Error fetching jumlah antrian');
+                } else {
+                  const tujuan_panggil = {};
+                  results.forEach((val) => {
+                    tujuan_panggil[val.id_antrian_detail] = val;
+                  });
+                  result.kategori.tujuan_panggil = tujuan_panggil;
+
+                  res.setHeader('Content-Type', 'application/json');
+                  res.statusCode = 200;
+                  res.end(JSON.stringify(result));
+                  ws.send(res);
+                }
+              });
+            }
+          });
+        } else {
+          res.statusCode = 404;
+          res.end('No data found');
+        }
+      }
+    });
 }
 
 
