@@ -115,14 +115,18 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                   tujuan_panggil[val.id_antrian_detail] = val;
                 });
                 result.kategori.tujuan_panggil = tujuan_panggil;
-
-                ws.send(JSON.stringify(result));
+                const response = [
+                  { 'status': 'ok' },
+                  { 'data': result }
+                ];
+                
+                ws.send(JSON.stringify(response));
               }
             });
           }
         });
       } else {
-        ws.send(JSON.stringify({ message: 'No data found' }));
+        ws.send(JSON.stringify({ status: 'error', message: 'No data found' }));
       }
     }
   });
