@@ -70,8 +70,8 @@ function getLastAntrianUpdate(ws, monitorId) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const data = results[0];
-      ws.send(JSON.stringify(currentDate));
-      //getAllAntrianUpdate(ws, monitorId, data);
+      // ws.send(JSON.stringify(currentDate));
+      getAllAntrianUpdate(ws, monitorId, data);
     }
   });
 }
