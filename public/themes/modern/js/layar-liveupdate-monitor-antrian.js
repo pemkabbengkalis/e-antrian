@@ -15,7 +15,7 @@ function connectWebSocket() {
 	var socket = new WebSocket(websocketURL);
 
 	socket.addEventListener('open', function (event) {
-		console.log('Koneksi WebSocket terbuka.',websocketURL);
+		console.log('Koneksi WebSocket terbuka.',$('#id-setting-layar').text());
         var id = $('#id-setting-layar').text();
         var message = {
             action: 'set_id',

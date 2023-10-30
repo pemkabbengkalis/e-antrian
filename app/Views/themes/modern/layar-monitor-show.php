@@ -34,56 +34,10 @@ if ($setting['text_footer_mode'] == 'running_text') {
 	</style>';
 }
 ?>
-
 <script type="text/javascript" src="<?=$config->baseURL . 'public/vendors/jquery/jquery.min.js?r='.time()?>"></script>
 <script type="text/javascript" src="<?=$config->baseURL . 'public/vendors/bootstrap/js/bootstrap.min.js?r='.time()?>"></script>
-<script type="text/javascript">
-	var base_url = "<?=base_url()?>/"
-</script>
-<?php
-if (@$scripts) {
-	foreach($scripts as $file) {
-		if (is_array($file)) {
-			if ($file['print']) {
-				echo '<script type="text/javascript">' . $file['script'] . '</script>' . "\n";
-			}
-		} else {
-			echo '<script type="text/javascript" src="'.$file.'?r='.time().'"></script>' . "\n";
-		}
-	}
-}
 
-if ($setting['jenis_video'] == 'folder') {
 
-	$path = 'public/videos/';
-	$files = scandir($path);
-
-	foreach ($files as $file) {
-		if ($file == '.' || $file == '..') {
-			continue;
-		}
-		if (is_dir($path . $file)) {
-			continue;
-		}
-		
-		$mime = mime_content_type($path .$file);
-		
-		if ($mime == 'video/mp4') {
-			$videos[] = base_url() . '/' . $path . $file; 
-		}
-	}
-} else if ($setting['jenis_video'] == 'file_video') {
-	$videos[] = $setting['link_video'];
-}
-
-echo '<script type="text/javascript">const jenis_video = ' . '"' . $setting['jenis_video'] . '";';
-if ($setting['jenis_video'] != 'youtube') {
-	echo 'const list_videos = ' . "'" .  json_encode($videos) . "'";
-}
-
-echo '</script>';
-
-?>
 
 </head>
 <body>
@@ -258,3 +212,52 @@ echo '</script>';
 	<span style="display:none" id="awalan-panggil"><?=json_encode($awalan_panggil['nama_file'])?></span>
 </body>
 </html>
+
+
+<script type="text/javascript">
+	var base_url = "<?=base_url()?>/"
+</script>
+<?php
+if (@$scripts) {
+	foreach($scripts as $file) {
+		if (is_array($file)) {
+			if ($file['print']) {
+				echo '<script type="text/javascript">' . $file['script'] . '</script>' . "\n";
+			}
+		} else {
+			echo '<script type="text/javascript" src="'.$file.'?r='.time().'"></script>' . "\n";
+		}
+	}
+}
+
+if ($setting['jenis_video'] == 'folder') {
+
+	$path = 'public/videos/';
+	$files = scandir($path);
+
+	foreach ($files as $file) {
+		if ($file == '.' || $file == '..') {
+			continue;
+		}
+		if (is_dir($path . $file)) {
+			continue;
+		}
+		
+		$mime = mime_content_type($path .$file);
+		
+		if ($mime == 'video/mp4') {
+			$videos[] = base_url() . '/' . $path . $file; 
+		}
+	}
+} else if ($setting['jenis_video'] == 'file_video') {
+	$videos[] = $setting['link_video'];
+}
+
+echo '<script type="text/javascript">const jenis_video = ' . '"' . $setting['jenis_video'] . '";';
+if ($setting['jenis_video'] != 'youtube') {
+	echo 'const list_videos = ' . "'" .  json_encode($videos) . "'";
+}
+
+echo '</script>';
+
+?>
