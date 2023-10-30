@@ -204,7 +204,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                           console.error('Error fetching jumlah antrian: ' + error);
                         } else {
                           const tujuanpanggil = results;
-                          results.tujuan.tujuan_panggil = tujuanpanggil;
+                          result.tujuan.tujuan_panggil = tujuanpanggil;
                         }
                       });
                     }
