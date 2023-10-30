@@ -135,7 +135,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
   FROM antrian_kategori 
   LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
   WHERE id_setting_layar = ?
-  AND tgl_update > ?'`;
+  AND tgl_update > ?`;
 
   db.query(cekkategoriSQL, [monitorId, waktu['tgl_update_kategori']], (error, results) => {
     if (error) {
@@ -148,7 +148,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
         const kategoriTujuanSQL = `SELECT * FROM antrian_detail
         LEFT JOIN antrian_kategori USING(id_antrian_kategori)
         LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-        WHERE id_antrian_kategori = ?'`;
+        WHERE id_antrian_kategori = ?`;
 
 
         db.query(kategoriTujuanSQL, [hasilkategori.id_antrian_kategori], (error, results) => {
