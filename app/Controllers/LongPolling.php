@@ -23,48 +23,43 @@ class LongPolling extends \App\Controllers\BaseController
 	
 	/* Liveupdate layar monitor besar */
 	public function monitor_current_antrian()
-{
-    try {
-        if (empty($_GET['id'])) {
-            echo json_encode([
-                'status' => 'error',
-                'message' => 'Invalid input'
-            ]);
-            return;
-        }
-        
-        $id = (int)$_GET['id']; // Cast $_GET['id'] to an integer to ensure it's an integer.
-        
-        if ($id <= 0) {
-            echo json_encode([
-                'status' => 'error',
-                'message' => 'Invalid input'
-            ]);
-            return;
-        }
-
-        $current_antrian = $this->model->getLastAntrianDipanggil($id);
-
-        while (true) {
-            $new_antrian = $this->model->getAntrianBelumDipanggil($id, $current_antrian['waktu_panggil']);
-            if ($new_antrian) {
-                echo json_encode([
-                    'status' => 'ok',
-                    'data' => $new_antrian
-                ]);
-                return;
-            }
-            sleep(10);
-        }
-    } catch (Exception $e) {
-        echo json_encode([
-            'status' => 'error',
-            'message' => $e->getMessage()
-        ]);
-        return;
-    }
-}
-	
+	{
+		try {
+			if (empty($_GET['id'])) {
+				echo json_encode(
+					[
+						'status' => 'error',
+						'message' => 'Invalid input'
+					]
+				);
+				exit;
+			}
+			$id = $_GET['id'];
+			$current_antrian = $this->model->getLastAntrianDipanggil($id);
+			
+			while(true) {
+				
+				$new_antrian =  $this->model->getAntrianBelumDipanggil($id, $current_antrian['waktu_panggil']);
+				if ($new_antrian) {
+					echo json_encode([
+						'status' => 'ok',
+						'data' => $new_antrian
+					]);
+					exit;
+				}
+				clearstatcache();
+				sleep(1);
+			}
+		} catch (Exception $e) {
+			echo json_encode(
+					array (
+						'status' => false,
+						'error' => $e -> getMessage()
+					)
+				);
+			exit;
+		}
+	}
 	
 	/* Liveupdate layar monitor besar - Cek panggil ulang antrian */
 	public function monitor_panggil_ulang_antrian() {
@@ -99,8 +94,21 @@ class LongPolling extends \App\Controllers\BaseController
 					exit;					
 				}
 			}
+			/* 
+				
+				
+				
+			$panggil_ulang =  $this->model->getPanggilUlang($id);
+			
+			if ($panggil_ulang) {
+				echo json_encode([
+					'status' => 'ok',
+					'data' => $panggil_ulang
+				]);
+				exit;
+			} */
 			clearstatcache();
-			sleep(10);
+			sleep(5);
 		}
 	}
 	
@@ -137,7 +145,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(10);
+				sleep(5);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -179,7 +187,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				// }
 				clearstatcache();
-				sleep(10);
+				sleep(1);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -218,7 +226,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(10);
+				sleep(5);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -256,7 +264,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(10);
+				sleep(5);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -292,7 +300,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(10);
+				sleep(5);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -328,7 +336,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(10);
+				sleep(5);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
