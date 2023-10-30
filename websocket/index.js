@@ -124,9 +124,6 @@ function getLastAntrianUpdate(ws, monitorId) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const data = results;
-      // ws.send(JSON.stringify(currentDate));
-      const date = new Date(data['tgl_update_kategori']);
-      const formattedDate = date.toISOString().slice(0, 10);
       getAllAntrianUpdate(ws, monitorId, data);
     }
   });
