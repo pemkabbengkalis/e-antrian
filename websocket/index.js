@@ -131,6 +131,7 @@ function getLastAntrianUpdate(ws, monitorId) {
 
 function getAllAntrianUpdate(ws, monitorId, waktu) {
   // Cek Kategori
+  var result;
   const cekkategoriSQL = `SELECT * 
   FROM antrian_kategori 
   LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
@@ -142,7 +143,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const hasilkategori = results;
-      results.kategori = hasilkategori;
+      result.kategori = hasilkategori;
       if (hasilkategori) {
         // Kategori Tujuan
         const kategoriTujuanSQL = `SELECT * FROM antrian_detail
@@ -156,7 +157,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
             console.error('Error fetching kategori tujuan: ' + error);
           } else {
             const kategori_tujuan = results;
-            results.kategori.tujuan = kategori_tujuan;
+            result.kategori.tujuan = kategori_tujuan;
 
             // Jumlah antrian masing-masing tujuan
             const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
@@ -175,7 +176,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                 results.forEach((val) => {
                   tujuan_panggil[val.id_antrian_detail] = val;
                 });
-                results.kategori.tujuan_panggil = tujuan_panggil;
+                result.kategori.tujuan_panggil = tujuan_panggil;
                 //Cek update Tujuan
                 const antrianAktif = `SELECT *, antrian_detail.aktif AS tujuan_aktif
                 FROM antrian_detail
@@ -190,7 +191,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                     console.error('Error fetching jumlah antrian: ' + error);
                   } else {
                     const tujuan = results
-                    results.tujuan = tujuan;
+                    result.tujuan = tujuan;
                     if (tujuan) {
                       // Jumlah antrian tujuan
                       const jumlAntrianTujuan = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
@@ -219,13 +220,13 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                       db.query(antrianAkhir, [currentDate], (error, results) => {
                         if (error) {} else {
                           const kategori_tujuan_akhir = results;
-                          results.kategori.antrian_terakhir = kategori_tujuan_akhir;
+                          result.kategori.antrian_terakhir = kategori_tujuan_akhir;
 
                         }
                       });
                     }
 
-                    if (!results.kategori && !results.tujuan) {
+                    if (!result.kategori && !result.tujuan) {
                       return false;
                     }
 
@@ -237,7 +238,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                         'status': 'ok'
                       },
                       {
-                        'data': results
+                        'data': result
                       }
                     ];
 
