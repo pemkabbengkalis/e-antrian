@@ -1,176 +1,131 @@
+let i = 0;
+let current_ended = 0;
+let audio_ended = true;
 let audio_object = [];
 let current_added = [];
 const data_layar_antrian = [];
-let audio_ended = true;
-let current_volume = '';
-let i = 0;
+current_volume = '';
 
-$(document).ready(function() {
-    // Fungsi untuk polling data setiap 5 detik
-    function pollData(url, callback) {
-        $.ajax({
-            type: 'post',
-            url: url,
-            dataType: 'JSON',
-            success: function(data) {
-                data_layar_antrian.push(data.data);
-                addAudio(data.data);
-                if (audio_ended) {
-                    if (player) {
-                        current_volume = player.volume;
-                        new_volume = (5 / 100) * current_volume;
-                        console.log(current_volume);
-                        console.log(new_volume.toFixed(2));
-                        player.volume = new_volume.toFixed(2);
-                    }
-                    playSound();
-                }
-                if (typeof callback === 'function') {
-                    callback();
-                }
-            },
-            error: function(xhr) {
-                console.log(xhr);
-                //alert('Ajax Error !!!', xhr.responseText + '<br/><strong>Note</strong>: Detail error ada di console browser');
-                if (typeof callback === 'function') {
-                    callback();
-                }
-            }
-        });
-    }
 
-    function pollDataWithInterval(url, callback, interval) {
-        pollData(url, function() {
-            setTimeout(function() {
-                pollDataWithInterval(url, callback, interval);
-            }, interval);
-        });
-    }
 
-    // Panggil fungsi polling dengan interval 5 detik
-    pollDataWithInterval(base_url + '/longPolling/monitor_current_antrian?id=' + $('#id-setting-layar').text(), function() {
-        // callback function jika diperlukan
-    }, 60000);
+//WEBSOCKET
+var websocketURL = 'wss://10.20.30.252:8443?id='+ $('#id-setting-layar').text();
 
-    pollDataWithInterval(base_url + '/longPolling/monitor_panggil_ulang_antrian?id=' + $('#id-setting-layar').text(), function() {
-        // callback function jika diperlukan
-    }, 60000);
+function connectWebSocket() {
+	var socket = new WebSocket(websocketURL);
 
-    pollDataWithInterval(base_url + '/longPolling/monitor_perubahan_antrian?id=' + $('#id-setting-layar').text(), function() {
-        // callback function jika diperlukan
-    }, 60000);
+	socket.addEventListener('open', function (event) {
+		console.log('Koneksi WebSocket terbuka.',$('#id-setting-layar').text());
+	});
 
-    function playSound() {
-        audio_ended = false;
-        if (current_added.indexOf(i) !== -1) {
-            console.log('change layar');
-            data = data_layar_antrian[0];
-            if (data) {
-                console.log(data.awalan + data.jml_dipanggil);
-                $('.current-antrian-number').find('.number-one').html(data.awalan + data.jml_dipanggil);
-                $('.current-antrian-tujuan').html(data.nama_antrian_tujuan);
-                $('#list-antrian-detail-nomor-' + data.id_antrian_detail).html(data.jml_dipanggil);
-            }
-            data_layar_antrian.splice(0, 1);
-        }
-        suara = audio_object[i];
+	socket.addEventListener('message', function (event) {
+		var receivedData = JSON.parse(event.data);
 
-        console.log(i + '-' + audio_object.length);
-        if (suara !== undefined) {
-            suara.addEventListener('ended', playSound);
-            suara.play();
-            i++;
-        } else {
-            if (player) {
-                player.volume = current_volume;
-            }
-            audio_ended = true;
-        }
-    }
+		if (receivedData[0] && receivedData[0].fungsi) {
+			var fungsiValue = receivedData[0].fungsi;
+			switch (fungsiValue) {
+				case 'check_perubahan_antrian':
+					console.log("jalan kan fungsi check_perubahan_antrian");
+					if (receivedData[2] && receivedData[2].data) {
+						var dataValue = receivedData[2].data;
+						console.log("Value of 'data':", dataValue);
+			
+						// Di sini Anda dapat menggabungkan nilai 'fungsi' dan 'data' sesuai kebutuhan.
+						// var combinedResult = {
+						// 	fungsi: fungsiValue,
+						// 	data: dataValue
+						// };
+						check_perubahan_antrian(dataValue);
+						// console.log("Combined Result:", combinedResult);
+					}
+					break;
 
-    function addAudio(data) {
-        audio = [];
-        current_added.push(audio_object.length);
-        awalan_panggil = $('#awalan-panggil').html();
-        if (awalan_panggil) {
-            textJSON = JSON.parse(awalan_panggil);
-            if (textJSON) {
-                obj = JSON.parse(textJSON);
-                obj.map(item => {
-                    audio.push(item.toLowerCase());
-                });
-            }
-        }
+				default:
+					break;
+			}
+		}
+	});
 
-        if (data.awalan !== '') {
-            audio.push(data.awalan.toLowerCase() + '.wav');
-        }
+	socket.addEventListener('close', function (event) {
+		if (event.wasClean) {
+			console.log('Koneksi WebSocket ditutup dengan bersih, kode: ' + event.code + ', alasan: ' + event.reason);
+		} else {
+			console.error('Koneksi WebSocket terputus. Mencoba menghubungkan ulang dalam 5 detik.');
+			setTimeout(connectWebSocket, 5000); // Coba menghubungkan ulang dalam 5 detik.
+		}
+	});
 
-        audio_angka = terbilang(data.jml_dipanggil);
-        audio_angka = audio_angka.split(' ');
-        for (k in audio_angka) {
-            audio_angka[k] = audio_angka[k].toLowerCase() + '.wav';
-        }
+	socket.addEventListener('error', function (event) {
+		console.error('Terjadi kesalahan koneksi WebSocket:', event);
+	});
+}
 
-        audio = audio.concat(audio_angka);
-        audio.push('silakan_menuju_ke.wav');
-        nama_file = $.parseJSON(data.nama_file);
+connectWebSocket();
 
-        for (k in nama_file) {
-            if ($.trim(nama_file[k]) !== '') {
-                audio.push(nama_file[k].toLowerCase());
-                console.log(audio);
-            }
-        }
 
-        audio.map(file => {
-            audio_object.push(new Audio(base_url + 'public/files/audio/' + file));
-        });
-    }
+function check_perubahan_antrian(data) 
+{
+	
+			kategori = data.kategori;
+			tujuan = data.kategori.tujuan;
+			antrian_terakhir = data.kategori.antrian_terakhir[0];
 
-	function terbilang(bilangan) 
-	{
-		bilangan = parseInt(bilangan);
-		angka = [];
-		angka[0] = '';
-		angka[1] = 'satu';
-		angka[2] =  'dua';
-		angka[3] =  'tiga';
-		angka[4] =  'empat';
-		angka[5] =  'lima';
-		angka[6] =  'enam';
-		angka[7] =  'tujuh';
-		angka[8] =  'delapan';
-		angka[9] =  'sembilan';
-		angka[10] =  'sepuluh';
-		angka[11] =  'sebelas';
+			console.log("HASIL AKTIF :",antrian_terakhir);
+
+			if (kategori) {
+
+				if (kategori.aktif == 'Y') {
+					$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
+					$elm.each(function(i, elm) 
+					{
+						$(elm).find('.antrian-awalan').html(kategori.awalan);
+
+						id_antrian_detail = $(elm).attr('data-id-tujuan');
+						nomor_antrian = 0;
+						if (id_antrian_detail in kategori.tujuan_panggil) {
+							nomor_antrian = kategori.tujuan_panggil[id_antrian_detail].nomor_panggil;
+						}
+
+						$(elm).find('.nomor-antrian-dipanggil').html(nomor_antrian);
+					})
+
+				} else if (kategori.aktif == 'N') 
+				{
+
+					$elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
+					$elm.each(function(i, elm) {
+						$(elm).find('.antrian-awalan').html('');
+						$(elm).find('.nomor-antrian-dipanggil').html('---');
+					})							
+				}
+			}
+
+			if (tujuan) {
+				if (tujuan.tujuan_aktif == 'Y') 
+				{
+					$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
+					$elm.find('.antrian-awalan').html(tujuan.awalan);
+					nomor_antrian = tujuan.tujuan_panggil?.nomor_panggil || 0;
+					$elm.find('.nomor-antrian-dipanggil').html(nomor_antrian);
+
+				} else if (tujuan.tujuan_aktif == 'N') 
+				{
+
+					$elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
+					$elm.find('.antrian-awalan').html('');
+					$elm.find('.nomor-antrian-dipanggil').html('---');							
+				}
+
+			}
+
+			if (antrian_terakhir) 
+			{
+				$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
+				$('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
+			} else {
+				$('.number-one, .current-antrian-tujuan').html('---');
+			}
+
+			
 		
-		result = '';
-		if (bilangan < 12) {
-			result = ' ' + angka[bilangan];
-		} else if (bilangan < 20) {
-			result = terbilang(bilangan - 10) + ' belas';
-		} else if (bilangan < 100) {
-			result = terbilang(bilangan/10) + ' puluh ' + terbilang(bilangan % 10);
-		} else if (bilangan < 200) {
-			result = ' seratus ' + terbilang(bilangan - 100);
-		} else if (bilangan < 1000) {
-			result = terbilang(bilangan/100) + ' ratus ' + terbilang(bilangan % 100);
-		} 
-		
-		/*
-		else if ($nilai < 2000) {
-			$temp = " seribu" . penyebut($nilai - 1000);
-		} else if ($nilai < 1000000) {
-			$temp = penyebut($nilai/1000) . " ribu" . penyebut($nilai % 1000);
-		} else if ($nilai < 1000000000) {
-			$temp = penyebut($nilai/1000000) . " juta" . penyebut($nilai % 1000000);
-		} else if ($nilai < 1000000000000) {
-			$temp = penyebut($nilai/1000000000) . " milyar" . penyebut(fmod($nilai,1000000000));
-		} else if ($nilai < 1000000000000000) {
-			$temp = penyebut($nilai/1000000000000) . " trilyun" . penyebut(fmod($nilai,1000000000000));
-		}*/
-		
-		return $.trim(result);
 	}
-});
