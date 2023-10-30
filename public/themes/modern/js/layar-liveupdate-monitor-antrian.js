@@ -31,7 +31,7 @@ $(document).ready(function() {
             },
             error: function(xhr) {
                 console.log(xhr);
-                alert('Ajax Error !!!', xhr.responseText + '<br/><strong>Note</strong>: Detail error ada di console browser');
+                //alert('Ajax Error !!!', xhr.responseText + '<br/><strong>Note</strong>: Detail error ada di console browser');
                 if (typeof callback === 'function') {
                     callback();
                 }
