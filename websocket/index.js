@@ -89,15 +89,16 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
-      const kategori = results[0];
+      const kategori = results;
       const result = { kategori };
 
       if (kategori) {
         // Kategori Tujuan
+        const id_antrian_kategori = kategori.map(item => item.id_antrian_kategori).join(', ');
         const kategoriTujuanSQL = `SELECT * FROM antrian_detail
           LEFT JOIN antrian_kategori USING(id_antrian_kategori)
           LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-          WHERE id_antrian_kategori = ${kategori.id_antrian_kategori}`;
+          WHERE id_antrian_kategori IN (${id_antrian_kategori})`;
 
         db.query(kategoriTujuanSQL, [kategori.id_antrian_kategori], (error, results) => {
           if (error) {
