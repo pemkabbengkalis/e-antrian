@@ -142,7 +142,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const hasilkategori = results;
-      result.kategori = hasilkategori;
+      results.kategori = hasilkategori;
       if (hasilkategori) {
         // Kategori Tujuan
         const kategoriTujuanSQL = `SELECT * FROM antrian_detail
@@ -156,7 +156,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
             console.error('Error fetching kategori tujuan: ' + error);
           } else {
             const kategori_tujuan = results;
-            result.kategori.tujuan = kategori_tujuan;
+            results.kategori.tujuan = kategori_tujuan;
 
             // Jumlah antrian masing-masing tujuan
             const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
@@ -175,7 +175,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                 results.forEach((val) => {
                   tujuan_panggil[val.id_antrian_detail] = val;
                 });
-                result.kategori.tujuan_panggil = tujuan_panggil;
+                results.kategori.tujuan_panggil = tujuan_panggil;
                 //Cek update Tujuan
                 const antrianAktif = `SELECT *, antrian_detail.aktif AS tujuan_aktif
                 FROM antrian_detail
@@ -190,7 +190,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                     console.error('Error fetching jumlah antrian: ' + error);
                   } else {
                     const tujuan = results
-                    result.tujuan = tujuan;
+                    results.tujuan = tujuan;
                     if (tujuan) {
                       // Jumlah antrian tujuan
                       const jumlAntrianTujuan = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
@@ -203,7 +203,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                           console.error('Error fetching jumlah antrian: ' + error);
                         } else {
                           const tujuanpanggil = results;
-                          result.tujuan.tujuan_panggil = tujuanpanggil;
+                          results.tujuan.tujuan_panggil = tujuanpanggil;
                         }
                       });
                     }
@@ -219,13 +219,13 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                       db.query(antrianAkhir, [currentDate], (error, results) => {
                         if (error) {} else {
                           const kategori_tujuan_akhir = results;
-                          result.kategori.antrian_terakhir = kategori_tujuan_akhir;
+                          results.kategori.antrian_terakhir = kategori_tujuan_akhir;
 
                         }
                       });
                     }
 
-                    if (!result.kategori && !result.tujuan) {
+                    if (!results.kategori && !results.tujuan) {
                       return false;
                     }
 
@@ -237,7 +237,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                         'status': 'ok'
                       },
                       {
-                        'data': result
+                        'data': results
                       }
                     ];
 
