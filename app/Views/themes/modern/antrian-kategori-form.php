@@ -38,7 +38,7 @@
 				<label class="col-sm-3 col-md-2 col-lg-3 col-xl-2 col-form-label">Abjad Awal Antrian</label>
 				<div class="col-sm-5">
 					<?php
-					echo options(['name' => 'awalan'], ['' => 'Tidak', 'A' => 'A', 'B' => 'B', 'C' => 'C', 'D' => 'D', 'E' => 'E', 'F' => 'F', 'G' => 'G'], set_value('awalan', @$antrian_kategori['awalan']) )
+					echo options(['name' => 'awalan'], ['' => 'Tidak', 'A' => 'A', 'B' => 'B', 'C' => 'C', 'D' => 'D', 'E' => 'E', 'F' => 'F', 'G' => 'G','H' => 'H','I' => 'I', 'J' => 'J'], set_value('awalan', @$antrian_kategori['awalan']) )
 					?>
 					<small>Misal: sistem nomor nya A1, A2, A3, dst... (diawali abjad A), berarti awalan nya adalah A</small>
 				</div>
