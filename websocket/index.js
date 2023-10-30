@@ -40,6 +40,7 @@ wss.on('connection', function connection(ws) {
   });
 
   const interval = setInterval(() => {
+    getCurrentAntrian(ws,monitorId);
     getLastAntrianUpdate(ws, monitorId);
   }, 1000);
 
@@ -47,6 +48,44 @@ wss.on('connection', function connection(ws) {
     clearInterval(interval);
   });
 });
+
+/*current Antrian*/
+
+function getCurrentAntrian(ws,monitorId){
+  const query = `SELECT MAX(waktu_panggil) AS waktu_panggil FROM antrian_panggil_detail
+  LEFT JOIN antrian_detail USING(id_antrian_detail)
+  LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+  LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+  WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}"`;
+  db.query(query, (error, results) => {
+    if (error) {
+      console.error('Error fetching data from the database: ' + error);
+    } else{
+        const waktu_panggil = results;
+        const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
+				LEFT JOIN antrian_detail USING(id_antrian_detail)
+				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "03:35:47"`;
+        db.query(querAntrianBelumDipanggil, (error, results) => {
+          if(error){
+            console.error('Error fetching data from the database: ' + error);
+          }else{
+            const response = [
+              {'fungsi':'check_current_antrian'},
+              { 'status': 'ok' },
+              { 'data': results }
+            ];
+            
+            ws.send(JSON.stringify(response));
+          }
+        });
+    }
+  });
+}
+
 
 
 
