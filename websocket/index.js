@@ -83,7 +83,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
     FROM antrian_kategori 
     LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
     WHERE id_setting_layar = ${monitorId}
-    AND tgl_update > "${waktu}"`;
+    AND tgl_update > "${waktu['tgl_update_kategori']}"`;
 
   db.query(cekkategoriSQL, [monitorId, waktu], (error, results) => {
     if (error) {
