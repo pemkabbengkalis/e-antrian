@@ -72,7 +72,7 @@ function getLastAntrianUpdate(ws, monitorId) {
       // ws.send(JSON.stringify(currentDate));
       const date = new Date(data['tgl_update_kategori']);
       const formattedDate = date.toISOString().slice(0, 10);
-      getAllAntrianUpdate(ws, monitorId, formattedDate);
+      getAllAntrianUpdate(ws, monitorId, data);
     }
   });
 }
@@ -83,22 +83,21 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
     FROM antrian_kategori 
     LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
     WHERE id_setting_layar = ${monitorId}
-    AND tgl_update > ${waktu}`;
+    AND tgl_update > "${waktu}"`;
 
   db.query(cekkategoriSQL, [monitorId, waktu], (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
-      const kategori = results;
+      const kategori = results[0];
       const result = { kategori };
 
       if (kategori) {
         // Kategori Tujuan
-        const id_antrian_kategori = kategori.map(item => item.id_antrian_kategori).join(', ');
         const kategoriTujuanSQL = `SELECT * FROM antrian_detail
           LEFT JOIN antrian_kategori USING(id_antrian_kategori)
           LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-          WHERE id_antrian_kategori IN (${id_antrian_kategori})`;
+          WHERE id_antrian_kategori = ${kategori.id_antrian_kategori}`;
 
         db.query(kategoriTujuanSQL, [kategori.id_antrian_kategori], (error, results) => {
           if (error) {
@@ -106,14 +105,13 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
           } else {
             const kategori_tujuan = results;
             result.kategori.tujuan = kategori_tujuan;
-            const id_antrian_detail_values = kategori_tujuan.map(item => item.id_antrian_detail).join(', ');
 
             // Jumlah antrian masing-masing tujuan
             const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
               FROM antrian_panggil_detail
               LEFT JOIN antrian_panggil USING(id_antrian_panggil)
               LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_antrian_detail IN (${id_antrian_detail_values}) AND tanggal = "${currentDate}"
+              WHERE id_antrian_detail = "${results.id_antrian_detail}" AND tanggal = "${currentDate}"
               GROUP BY id_antrian_detail`;
 
             db.query(jumlahAntrianSQL, [results.id_antrian_detail, currentDate], (error, results) => {
