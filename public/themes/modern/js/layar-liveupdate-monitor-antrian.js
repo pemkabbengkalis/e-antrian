@@ -124,12 +124,12 @@ function check_perubahan_antrian(data)
 
 			}
 
-			if (antrian_terakhir) 
+			if (antrian_terakhir.length > 0) 
 			{
 				$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
 				$('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
 			} else {
-				$('.number-one, .current-antrian-tujuan').html('---');
+				//$('.number-one, .current-antrian-tujuan').html('---');
 			}
 
 			
