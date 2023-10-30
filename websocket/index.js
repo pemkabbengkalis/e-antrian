@@ -130,7 +130,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                       LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
                       LEFT JOIN antrian_kategori ON antrian_detail.id_antrian_kategori = antrian_kategori.id_antrian_kategori
                       WHERE tanggal =  "${currentDate}" AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
-                      AND antrian_kategori= "${kategori.id_antrian_kategori}"
+                      AND antrian_kategori.id_antrian_kategori= "${kategori.id_antrian_kategori}"
                       ORDER BY waktu_panggil DESC LIMIT 1`;
 
                 db.query(antrianAkhir,[currentDate],(error, results) => {
