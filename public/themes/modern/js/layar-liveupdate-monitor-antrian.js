@@ -9,15 +9,13 @@ current_volume = '';
 
 
 //WEBSOCKET
-var idSettingLayarElement = document.getElementById('id-setting-layar');
-var idSettingLayar = idSettingLayarElement.textContent;
-var websocketURL = 'wss://10.20.30.252:8443?id='+idSettingLayar;
+var websocketURL = 'wss://10.20.30.252:8443?id='+ $('#id-setting-layar').text();
 
 function connectWebSocket() {
 	var socket = new WebSocket(websocketURL);
 
 	socket.addEventListener('open', function (event) {
-		console.log('Koneksi WebSocket terbuka.',idSettingLayar);
+		console.log('Koneksi WebSocket terbuka.',$('#id-setting-layar').text());
 	});
 
 	socket.addEventListener('message', function (event) {
