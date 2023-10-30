@@ -1,14 +1,20 @@
 import https from 'https'; // Menggunakan 'http' daripada 'https'
-import { WebSocketServer } from 'ws';
+import {
+  WebSocketServer
+} from 'ws';
 import mysql from 'mysql2';
-import { parse } from 'url';
+import {
+  parse
+} from 'url';
 import fs from 'fs';
 
 var monitorId;
 const currentDate = new Date().toISOString().split('T')[0];
 
 
-const wss = new WebSocketServer({ noServer: true }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
+const wss = new WebSocketServer({
+  noServer: true
+}); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
 
 const db = mysql.createPool({
   host: '10.20.30.252',
@@ -23,7 +29,10 @@ const server = https.createServer({
 });
 
 server.on('upgrade', (request, socket, head) => {
-  const { pathname, query } = parse(request.url, true);
+  const {
+    pathname,
+    query
+  } = parse(request.url, true);
   monitorId = query.id;
   wss.handleUpgrade(request, socket, head, (ws) => {
     wss.emit('connection', ws, request);
@@ -33,6 +42,7 @@ server.on('upgrade', (request, socket, head) => {
 wss.on('connection', function connection(ws) {
   ws.on('message', function message(data) {
     try {
+      getCurrentAntrian(ws, monitorId);
       getLastAntrianUpdate(ws, monitorId);
     } catch (error) {
       console.error('Error parsing client data: ' + error);
@@ -40,7 +50,7 @@ wss.on('connection', function connection(ws) {
   });
 
   const interval = setInterval(() => {
-    getCurrentAntrian(ws,monitorId);
+    getCurrentAntrian(ws, monitorId);
     getLastAntrianUpdate(ws, monitorId);
   }, 1000);
 
@@ -51,7 +61,7 @@ wss.on('connection', function connection(ws) {
 
 /*current Antrian*/
 
-function getCurrentAntrian(ws,monitorId){
+function getCurrentAntrian(ws, monitorId) {
   const query = `SELECT MAX(waktu_panggil) AS waktu_panggil FROM antrian_panggil_detail
   LEFT JOIN antrian_detail USING(id_antrian_detail)
   LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
@@ -61,28 +71,33 @@ function getCurrentAntrian(ws,monitorId){
   db.query(query, (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
-    } else{
-        const waktu_panggil = results;
-        const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
+    } else {
+      const waktu_panggil = results;
+      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
 				LEFT JOIN antrian_detail USING(id_antrian_detail)
 				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
 				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
 				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
 				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
 				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "${waktu_panggil}"`;
-        db.query(querAntrianBelumDipanggil, (error, results) => {
-          if(error){
-            console.error('Error fetching data from the database: ' + error);
-          }else{
-            const response = [
-              {'fungsi':'check_current_antrian'},
-              { 'status': 'ok' },
-              { 'data': results }
-            ];
-            
-            ws.send(JSON.stringify(response));
-          }
-        });
+      db.query(querAntrianBelumDipanggil, (error, results) => {
+        if (error) {
+          console.error('Error fetching data from the database: ' + error);
+        } else {
+          const response = [{
+              'fungsi': 'check_current_antrian'
+            },
+            {
+              'status': 'ok'
+            },
+            {
+              'data': results
+            }
+          ];
+
+          ws.send(JSON.stringify(response));
+        }
+      });
     }
   });
 }
@@ -108,7 +123,7 @@ function getLastAntrianUpdate(ws, monitorId) {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
-      const data = results[0];
+      const data = results;
       // ws.send(JSON.stringify(currentDate));
       const date = new Date(data['tgl_update_kategori']);
       const formattedDate = date.toISOString().slice(0, 10);
@@ -120,26 +135,26 @@ function getLastAntrianUpdate(ws, monitorId) {
 function getAllAntrianUpdate(ws, monitorId, waktu) {
   // Cek Kategori
   const cekkategoriSQL = `SELECT * 
-    FROM antrian_kategori 
-    LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
-    WHERE id_setting_layar = ${monitorId}
-    AND tgl_update > "${waktu['tgl_update_kategori']}"`;
+  FROM antrian_kategori 
+  LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
+  WHERE id_setting_layar = ?
+  AND tgl_update > ?'`;
 
-  db.query(cekkategoriSQL, [monitorId, waktu], (error, results) => {
+  db.query(cekkategoriSQL, [monitorId, waktu['tgl_update_kategori']], (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
-      const kategori = results[0];
-      const result = { kategori };
-
-      if (kategori) {
+      const hasilkategori = results;
+      result.kategori = hasilkategori;
+      if (hasilkategori) {
         // Kategori Tujuan
         const kategoriTujuanSQL = `SELECT * FROM antrian_detail
-          LEFT JOIN antrian_kategori USING(id_antrian_kategori)
-          LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-          WHERE id_antrian_kategori = ${kategori.id_antrian_kategori}`;
+        LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+        LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+        WHERE id_antrian_kategori = ?'`;
+        
 
-        db.query(kategoriTujuanSQL, [kategori.id_antrian_kategori], (error, results) => {
+        db.query(kategoriTujuanSQL, [hasilkategori.id_antrian_kategori], (error, results) => {
           if (error) {
             console.error('Error fetching kategori tujuan: ' + error);
           } else {
@@ -148,54 +163,102 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
 
             // Jumlah antrian masing-masing tujuan
             const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
-              FROM antrian_panggil_detail
-              LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-              LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_setting_Layar= "${monitorId}" AND tanggal = "${currentDate}"
-              GROUP BY id_antrian_detail`;
+            FROM antrian_panggil_detail
+            LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+            LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+            WHERE id_setting_Layar = ? AND tanggal = ?
+            GROUP BY id_antrian_detail`;
+            
 
             db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
               if (error) {
                 console.error('Error fetching jumlah antrian: ' + error);
               } else {
-                const tujuan_panggil = {};
+                const tujuan_panggil = [];
                 results.forEach((val) => {
                   tujuan_panggil[val.id_antrian_detail] = val;
                 });
                 result.kategori.tujuan_panggil = tujuan_panggil;
-                if (kategori || kategori_tujuan) {
-                const antrianAkhir = `SELECT * FROM antrian_panggil_detail
+                //Cek update Tujuan
+                const antrianAktif = `SELECT *, antrian_detail.aktif AS tujuan_aktif
+                FROM antrian_detail
+                LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+                LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+                LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
+                WHERE id_setting_layar = ?
+                AND antrian_detail.tgl_update > "' . $tgl_update['tgl_update_tujuan'] . '"`;
+
+                db.query(antrianAktif,[monitorId,waktu['tgl_update_tujuan']],(error,results) => {
+                  if (error) {
+                    console.error('Error fetching jumlah antrian: ' + error);
+                  } else {
+                    const tujuan  = results
+                    result.tujuan = tujuan;
+                    if(tujuan){
+                      // Jumlah antrian tujuan
+                      const jumlAntrianTujuan = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
+                      FROM antrian_panggil_detail
+                      LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+                      WHERE id_antrian_detail = ? AND tanggal = ?
+                      GROUP BY id_antrian_detail`;
+                      db.query(jumlAntrianTujuan,[tujuan.id_antrian_detail,currentDate],(error,results)=>{
+                          if(error){
+                            console.error('Error fetching jumlah antrian: ' + error);
+                          }else{
+                             const tujuanpanggil = results;
+                             result.tujuan.tujuan_panggil = tujuanpanggil;
+                          }
+                      });
+                    }
+                    if (kategori || kategori_tujuan) {
+                      const antrianAkhir = `SELECT * FROM antrian_panggil_detail
                       LEFT JOIN antrian_panggil USING(id_antrian_panggil)
                       LEFT JOIN antrian_detail USING(id_antrian_detail)
                       LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
                       LEFT JOIN antrian_kategori ON antrian_detail.id_antrian_kategori = antrian_kategori.id_antrian_kategori
-                      WHERE tanggal =  "${currentDate}" AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
-                      AND antrian_kategori.id_antrian_kategori= "${kategori.id_antrian_kategori}"
+                      WHERE tanggal = ? AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
                       ORDER BY waktu_panggil DESC LIMIT 1`;
+    
+                      db.query(antrianAkhir, [currentDate], (error, results) => {
+                        if (error) {} else {
+                          const kategori_tujuan_akhir = results;
+                          result.kategori.antrian_terakhir = kategori_tujuan_akhir;
+                          
+                        }
+                      });
+                    }
 
-                db.query(antrianAkhir,[currentDate],(error, results) => {
-                  if (error) {
-                  }else{
-                    const kategori_tujuan_akhir = results;
-                    result.kategori.antrian_terakhir = kategori_tujuan_akhir;
-                    const response = [
-                      {'fungsi':'check_perubahan_antrian'},
-                      { 'status': 'ok' },
-                      { 'data': result }
-                    ];
+                    if (!result.kategori && !result.tujuan) {
+                      return false;
+                    }
                     
-                    ws.send(JSON.stringify(response));
+
+                    const response = [{
+                      'fungsi': 'check_perubahan_antrian'
+                    },
+                    {
+                      'status': 'ok'
+                    },
+                    {
+                      'data': result
+                    }
+                  ];
+
+                  ws.send(JSON.stringify(response));
                   }
-                }
-              );
-                }
+                });
+
                 
+
               }
             });
           }
         });
       } else {
-        ws.send(JSON.stringify({ status: 'error', message: 'No data found' }));
+        ws.send(JSON.stringify({
+          status: 'error',
+          message: 'No data found'
+        }));
       }
     }
   });
