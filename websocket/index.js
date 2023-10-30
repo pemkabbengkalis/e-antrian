@@ -208,7 +208,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                         }
                       });
                     }
-                    if (kategori || kategori_tujuan) {
+                    if (result.kategori || result.tujuan) {
                       const antrianAkhir = `SELECT * FROM antrian_panggil_detail
                       LEFT JOIN antrian_panggil USING(id_antrian_panggil)
                       LEFT JOIN antrian_detail USING(id_antrian_detail)
