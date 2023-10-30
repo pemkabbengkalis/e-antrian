@@ -105,13 +105,14 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
           } else {
             const kategori_tujuan = results;
             result.kategori.tujuan = kategori_tujuan;
+            const id_antrian_detail_values = kategori_tujuan.map(item => item.id_antrian_detail).join(', ');
 
             // Jumlah antrian masing-masing tujuan
             const jumlahAntrianSQL = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
               FROM antrian_panggil_detail
               LEFT JOIN antrian_panggil USING(id_antrian_panggil)
               LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_antrian_detail = "${results.id_antrian_detail}" AND tanggal = "${currentDate}"
+              WHERE id_antrian_detail IN (${id_antrian_detail_values}) AND tanggal = "${currentDate}"
               GROUP BY id_antrian_detail`;
 
             db.query(jumlahAntrianSQL, [results.id_antrian_detail, currentDate], (error, results) => {
