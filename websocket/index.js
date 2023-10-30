@@ -57,6 +57,7 @@ function getCurrentAntrian(ws,monitorId){
   LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
   LEFT JOIN antrian_panggil USING(id_antrian_panggil)
   WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}"`;
+  //hasilnya : 03:59:43;
   db.query(query, (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
@@ -68,7 +69,7 @@ function getCurrentAntrian(ws,monitorId){
 				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
 				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
 				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "03:35:47"`;
+				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "${waktu_panggil}"`;
         db.query(querAntrianBelumDipanggil, (error, results) => {
           if(error){
             console.error('Error fetching data from the database: ' + error);
@@ -150,10 +151,10 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
               FROM antrian_panggil_detail
               LEFT JOIN antrian_panggil USING(id_antrian_panggil)
               LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-              WHERE id_antrian_detail = "${results.id_antrian_detail}" AND tanggal = "${currentDate}"
+              WHERE id_setting_Layar= "${monitorId}" AND tanggal = "${currentDate}"
               GROUP BY id_antrian_detail`;
 
-            db.query(jumlahAntrianSQL, [results.id_antrian_detail, currentDate], (error, results) => {
+            db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
               if (error) {
                 console.error('Error fetching jumlah antrian: ' + error);
               } else {
