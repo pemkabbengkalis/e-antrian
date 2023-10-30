@@ -9,7 +9,8 @@ current_volume = '';
 
 
 //WEBSOCKET
-var idSettingLayar = $('#id-setting-layar').text();
+var idSettingLayarElement = document.getElementById('id-setting-layar');
+var idSettingLayar = idSettingLayarElement.textContent;
 var websocketURL = 'wss://10.20.30.252:8443?id='+idSettingLayar;
 
 function connectWebSocket() {
