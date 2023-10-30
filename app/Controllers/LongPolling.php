@@ -48,7 +48,7 @@ class LongPolling extends \App\Controllers\BaseController
 					exit;
 				}
 				clearstatcache();
-				sleep(1);
+				sleep(60);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -108,7 +108,7 @@ class LongPolling extends \App\Controllers\BaseController
 				exit;
 			} */
 			clearstatcache();
-			sleep(5);
+			sleep(60);
 		}
 	}
 	
@@ -187,7 +187,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				// }
 				clearstatcache();
-				sleep(1);
+				sleep(60);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -226,7 +226,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(5);
+				sleep(60);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -264,7 +264,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(5);
+				sleep(60);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -300,7 +300,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(5);
+				sleep(60);
 			}
 		} catch (Exception $e) {
 			echo json_encode(
@@ -336,7 +336,7 @@ class LongPolling extends \App\Controllers\BaseController
 					}
 				}
 				clearstatcache();
-				sleep(5);
+				sleep(60);
 			}
 		} catch (Exception $e) {
 			echo json_encode(

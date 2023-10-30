@@ -50,15 +50,15 @@ $(document).ready(function() {
     // Panggil fungsi polling dengan interval 5 detik
     pollDataWithInterval(base_url + '/longPolling/monitor_current_antrian?id=' + $('#id-setting-layar').text(), function() {
         // callback function jika diperlukan
-    }, 5000);
+    }, 60000);
 
     pollDataWithInterval(base_url + '/longPolling/monitor_panggil_ulang_antrian?id=' + $('#id-setting-layar').text(), function() {
         // callback function jika diperlukan
-    }, 5000);
+    }, 60000);
 
     pollDataWithInterval(base_url + '/longPolling/monitor_perubahan_antrian?id=' + $('#id-setting-layar').text(), function() {
         // callback function jika diperlukan
-    }, 5000);
+    }, 60000);
 
     function playSound() {
         audio_ended = false;
