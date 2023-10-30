@@ -16,6 +16,12 @@ function connectWebSocket() {
 
 	socket.addEventListener('open', function (event) {
 		console.log('Koneksi WebSocket terbuka.',$('#id-setting-layar').text());
+        var id = $('#id-setting-layar').text();
+        var message = {
+            action: 'set_id',
+            id: id
+        };
+        socket.send(JSON.stringify(message));
 	});
 
 	socket.addEventListener('message', function (event) {
