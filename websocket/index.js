@@ -152,7 +152,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
         LEFT JOIN antrian_kategori USING(id_antrian_kategori)
         LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
         WHERE id_antrian_kategori = ?'`;
-        
+
 
         db.query(kategoriTujuanSQL, [hasilkategori.id_antrian_kategori], (error, results) => {
           if (error) {
@@ -168,7 +168,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
             LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
             WHERE id_setting_Layar = ? AND tanggal = ?
             GROUP BY id_antrian_detail`;
-            
+
 
             db.query(jumlahAntrianSQL, [monitorId, currentDate], (error, results) => {
               if (error) {
@@ -186,28 +186,28 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                 LEFT JOIN antrian_kategori USING(id_antrian_kategori)
                 LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
                 WHERE id_setting_layar = ?
-                AND antrian_detail.tgl_update > "' . $tgl_update['tgl_update_tujuan'] . '"`;
+                AND antrian_detail.tgl_update > ? `;
 
-                db.query(antrianAktif,[monitorId,waktu['tgl_update_tujuan']],(error,results) => {
+                db.query(antrianAktif, [monitorId, waktu['tgl_update_tujuan']], (error, results) => {
                   if (error) {
                     console.error('Error fetching jumlah antrian: ' + error);
                   } else {
-                    const tujuan  = results
+                    const tujuan = results
                     result.tujuan = tujuan;
-                    if(tujuan){
+                    if (tujuan) {
                       // Jumlah antrian tujuan
                       const jumlAntrianTujuan = `SELECT id_antrian_detail, id_antrian_kategori, COUNT(*) AS jml, MAX(nomor_panggil) AS nomor_panggil
                       FROM antrian_panggil_detail
                       LEFT JOIN antrian_panggil USING(id_antrian_panggil)
                       WHERE id_antrian_detail = ? AND tanggal = ?
                       GROUP BY id_antrian_detail`;
-                      db.query(jumlAntrianTujuan,[tujuan.id_antrian_detail,currentDate],(error,results)=>{
-                          if(error){
-                            console.error('Error fetching jumlah antrian: ' + error);
-                          }else{
-                             const tujuanpanggil = results;
-                             result.tujuan.tujuan_panggil = tujuanpanggil;
-                          }
+                      db.query(jumlAntrianTujuan, [tujuan.id_antrian_detail, currentDate], (error, results) => {
+                        if (error) {
+                          console.error('Error fetching jumlah antrian: ' + error);
+                        } else {
+                          const tujuanpanggil = results;
+                          result.tujuan.tujuan_panggil = tujuanpanggil;
+                        }
                       });
                     }
                     if (kategori || kategori_tujuan) {
@@ -218,12 +218,12 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                       LEFT JOIN antrian_kategori ON antrian_detail.id_antrian_kategori = antrian_kategori.id_antrian_kategori
                       WHERE tanggal = ? AND antrian_kategori.aktif = "Y" AND antrian_detail.aktif = "Y"
                       ORDER BY waktu_panggil DESC LIMIT 1`;
-    
+
                       db.query(antrianAkhir, [currentDate], (error, results) => {
                         if (error) {} else {
                           const kategori_tujuan_akhir = results;
                           result.kategori.antrian_terakhir = kategori_tujuan_akhir;
-                          
+
                         }
                       });
                     }
@@ -231,24 +231,24 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                     if (!result.kategori && !result.tujuan) {
                       return false;
                     }
-                    
+
 
                     const response = [{
-                      'fungsi': 'check_perubahan_antrian'
-                    },
-                    {
-                      'status': 'ok'
-                    },
-                    {
-                      'data': result
-                    }
-                  ];
+                        'fungsi': 'check_perubahan_antrian'
+                      },
+                      {
+                        'status': 'ok'
+                      },
+                      {
+                        'data': result
+                      }
+                    ];
 
-                  ws.send(JSON.stringify(response));
+                    ws.send(JSON.stringify(response));
                   }
                 });
 
-                
+
 
               }
             });
