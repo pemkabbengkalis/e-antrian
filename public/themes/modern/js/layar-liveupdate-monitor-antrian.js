@@ -9,7 +9,7 @@ current_volume = '';
 
 
 //WEBSOCKET
-var websocketURL = 'wss://10.20.30.252:8443?id='+ $('#id-setting-layar').text();
+var websocketURL = 'wss://10.20.30.252:8443?id=4';
 
 function connectWebSocket() {
 	var socket = new WebSocket(websocketURL);
