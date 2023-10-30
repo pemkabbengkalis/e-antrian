@@ -16,7 +16,7 @@ function connectWebSocket() {
 	var socket = new WebSocket(websocketURL);
 
 	socket.addEventListener('open', function (event) {
-		console.log('Koneksi WebSocket terbuka.');
+		console.log('Koneksi WebSocket terbuka.',idSettingLayar);
 	});
 
 	socket.addEventListener('message', function (event) {
