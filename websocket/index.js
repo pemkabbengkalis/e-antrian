@@ -131,7 +131,6 @@ function getLastAntrianUpdate(ws, monitorId) {
 
 function getAllAntrianUpdate(ws, monitorId, waktu) {
   // Cek Kategori
-  var result;
   const cekkategoriSQL = `SELECT * 
   FROM antrian_kategori 
   LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
