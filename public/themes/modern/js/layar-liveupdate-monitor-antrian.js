@@ -9,13 +9,13 @@ current_volume = '';
 
 
 //WEBSOCKET
-var websocketURL = 'wss://10.20.30.252:8443?id=4';
+var websocketURL = 'wss://10.20.30.252:8443?id='+ $('#id-setting-layar').text();
 
 function connectWebSocket() {
 	var socket = new WebSocket(websocketURL);
 
 	socket.addEventListener('open', function (event) {
-		console.log('Koneksi WebSocket terbuka.',$('#id-setting-layar').text());
+		console.log('Koneksi WebSocket terbuka.',websocketURL);
         var id = $('#id-setting-layar').text();
         var message = {
             action: 'set_id',
