@@ -130,6 +130,7 @@ function getLastAntrianUpdate(ws, monitorId) {
 }
 
 function getAllAntrianUpdate(ws, monitorId, waktu) {
+  const result = {};
   // Cek Kategori
   const cekkategoriSQL = `SELECT * 
   FROM antrian_kategori 
