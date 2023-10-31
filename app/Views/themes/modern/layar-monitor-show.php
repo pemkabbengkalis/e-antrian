@@ -38,9 +38,15 @@ if ($setting['text_footer_mode'] == 'running_text') {
 <script type="text/javascript" src="<?=$config->baseURL . 'public/vendors/bootstrap/js/bootstrap.min.js?r='.time()?>"></script>
 
 
+<style>
+	.bgmotif {
+	height: 100%;
+	background-image: url('<?=$config->baseURL . 'public/images/bgmotif.png' ?>');
+}
+</style>
 
 </head>
-<body>
+<body class="bgmotif">
 	<div class="block-container">
 		<header class="shadow-sm">
 			<div class="header-left-container">

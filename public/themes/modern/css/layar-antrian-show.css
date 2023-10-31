@@ -50,9 +50,10 @@ button.ambil-antrian {
 }
 
 .title {
-	color: #62616e;
+    color: #000000;
     margin-top: 50px;
     width: 800px;
+    font-weight: bold;
     margin: 30px auto;
     padding-bottom: 20px;
     border-bottom: 1px solid #CCCCCC;
