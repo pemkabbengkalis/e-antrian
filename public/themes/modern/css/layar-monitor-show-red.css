@@ -3,11 +3,12 @@ body{
 	color: #e9f2ff;
 }
 header {
-	background: #e73131;
+		/* background: #e73131; */
+		background-image: linear-gradient(to right top, #8c0a0a, #a21a17, #b92724, #d03432, #e74040);
 }
 
 footer {
-    background: #e73131;
+	background-image: linear-gradient(to right top, #8c0a0a, #a21a17, #b92724, #d03432, #e74040);
 }
 
 .current-antrian {

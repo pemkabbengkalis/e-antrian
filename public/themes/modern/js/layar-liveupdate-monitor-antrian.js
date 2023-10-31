@@ -8,8 +8,12 @@ current_volume = '';
 
 
 
-//WEBSOCKET
+//WEBSOCKET SERVER
 var websocketURL = 'wss://10.20.30.252:8443?id=' + $('#id-setting-layar').text();
+
+//LOCAL
+// var websocketURL = 'wss://localhost:8443?id=' + $('#id-setting-layar').text();
+
 
 function connectWebSocket() {
 	var socket = new WebSocket(websocketURL);

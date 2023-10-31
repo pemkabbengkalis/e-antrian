@@ -23,10 +23,17 @@ const db = mysql.createPool({
   database: 'loca_antrian',
 });
 
+//ONLINE KEY
 const server = https.createServer({
   key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
   cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
 });
+
+//LOCAL KEY
+// const server = https.createServer({
+//   key: fs.readFileSync('server-key.pem'),
+//   cert: fs.readFileSync('server-cert.pem'),
+// });
 
 server.on('upgrade', (request, socket, head) => {
   const {
@@ -145,9 +152,9 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
   FROM antrian_kategori 
   LEFT JOIN setting_layar_detail USING (id_antrian_kategori)
   WHERE id_setting_layar = ?
-  AND tgl_update > ?`;
+  AND tgl_update >= ?`;
 
-  db.query(cekkategoriSQL, [monitorId, waktu['tgl_update_kategori']], (error, results) => {
+  db.query(cekkategoriSQL, [monitorId, waktu[0]['tgl_update_kategori']], (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
@@ -195,7 +202,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                 WHERE id_setting_layar = ?
                 AND antrian_detail.tgl_update > ? `;
 
-                db.query(antrianAktif, [monitorId, waktu['tgl_update_tujuan']], (error, results) => {
+                db.query(antrianAktif, [monitorId, waktu[0]['tgl_update_tujuan']], (error, results) => {
                   if (error) {
                     console.error('Error fetching jumlah antrian: ' + error);
                   } else {
@@ -248,7 +255,7 @@ function getAllAntrianUpdate(ws, monitorId, waktu) {
                       },
                       {
                         'data': result
-                      }
+                      },
                     ];
 
                     ws.send(JSON.stringify(response));
