@@ -79,7 +79,7 @@ function getCurrentAntrian(ws, monitorId) {
 				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
 				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
 				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "${waktu_panggil['waktu_panggil']}"`;
+				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}" AND waktu_panggil > "${waktu_panggil['waktu_panggil']}"`;
       db.query(querAntrianBelumDipanggil, (error, results) => {
         if (error) {
           console.error('Error fetching data from the database: ' + error);
