@@ -72,44 +72,32 @@ function getCurrentAntrian(ws, monitorId) {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
-      const waktu_panggil = results;
-      const response = [{
-        'fungsi': 'check_current_antrian '+results[0].waktu_panggil
-      },
-      {
-        'status': 'ok'
-      },
-      {
-        'data': results
-      }
-    ];
+      const waktu_panggil = results[0];
+      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
+				LEFT JOIN antrian_detail USING(id_antrian_detail)
+				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "${waktu_panggil['waktu_panggil']}"`;
+      db.query(querAntrianBelumDipanggil, (error, results) => {
+        if (error) {
+          console.error('Error fetching data from the database: ' + error);
+        } else {
+          const response = [{
+              'fungsi': 'check_current_antrian'
+            },
+            {
+              'status': 'ok'
+            },
+            {
+              'data': results
+            }
+          ];
 
-    ws.send(JSON.stringify(response));
-      // const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
-			// 	LEFT JOIN antrian_detail USING(id_antrian_detail)
-			// 	LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
-			// 	LEFT JOIN antrian_kategori USING(id_antrian_kategori)
-			// 	LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-			// 	LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-			// 	WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate} "AND waktu_panggil > "08:15:35"`;
-      // db.query(querAntrianBelumDipanggil, (error, results) => {
-      //   if (error) {
-      //     console.error('Error fetching data from the database: ' + error);
-      //   } else {
-      //     const response = [{
-      //         'fungsi': 'check_current_antrian '+waktu_panggil.waktu_panggil
-      //       },
-      //       {
-      //         'status': 'ok'
-      //       },
-      //       {
-      //         'data': results
-      //       }
-      //     ];
-
-      //     ws.send(JSON.stringify(response));
-      //   }
-      // });
+          ws.send(JSON.stringify(response));
+        }
+      });
     }
   });
 }
