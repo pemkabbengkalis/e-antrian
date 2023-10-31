@@ -85,27 +85,34 @@ connectWebSocket();
 
 
 
+var lastAddedData = null; // Inisialisasi variabel untuk menyimpan data terakhir
+
 function check_current_antrian(data) {
     if (Array.isArray(data) && data.length > 0) {
         var firstElement = data[0]; // Mengambil elemen pertama dari data
 
-        data_layar_antrian.push(firstElement);
-        addAudio(firstElement);
+        if (!lastAddedData || !isEqual(firstElement, lastAddedData)) {
+            data_layar_antrian.push(firstElement);
+            addAudio(firstElement);
 
-        if (audio_ended) {
-            if (player) {
-                current_volume = player.volume;
-                new_volume = 5 / 100 * current_volume;
-                console.log(current_volume);
-                console.log(new_volume.toFixed(2));
-                player.volume = new_volume.toFixed(2);
+            if (audio_ended) {
+                if (player) {
+                    current_volume = player.volume;
+                    new_volume = 5 / 100 * current_volume;
+                    console.log(current_volume);
+                    console.log(new_volume.toFixed(2));
+                    player.volume = new_volume.toFixed(2);
+                }
+                playSound();
             }
-            playSound();
+
+            lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
         }
     } else {
         // Tindakan yang harus diambil jika data kosong atau bukan array
     }
 }
+
 
 
 function check_perubahan_antrian(data) {
