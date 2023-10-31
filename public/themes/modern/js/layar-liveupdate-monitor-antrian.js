@@ -146,7 +146,7 @@ function check_perubahan_antrian(data) {
 			const $elm = $('div[data-id-kategori="' + kategori.id_antrian_kategori + '"');
 			$elm.each(function (i, elm) {
 			  $(elm).find('.antrian-awalan').html('');
-			  $(elm).find('.nomor-antrian-dipanggil').html('---');
+			  //$(elm).find('.nomor-antrian-dipanggil').html('---');
 			});
 		  }
 		}
@@ -160,15 +160,15 @@ function check_perubahan_antrian(data) {
 		  } else if (tujuan.tujuan_aktif == 'N') {
 			const $elm = $('div[data-id-tujuan="' + tujuan.id_antrian_detail + '"');
 			$elm.find('.antrian-awalan').html('');
-			$elm.find('.nomor-antrian-dipanggil').html('---');
+			//$elm.find('.nomor-antrian-dipanggil').html('---');
 		  }
 		}
 	
 		if (antrian_terakhir) {
-		  $('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
+		  //$('.number-one').html(antrian_terakhir.awalan_panggil + antrian_terakhir.nomor_panggil);
 		  $('.current-antrian-tujuan').html(antrian_terakhir.nama_antrian_tujuan);
 		} else {
-		  $('.number-one, .current-antrian-tujuan').html('---');
+		  //$('.number-one, .current-antrian-tujuan').html('---');
 		}
 	  }
   }
