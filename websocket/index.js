@@ -74,7 +74,7 @@ function getCurrentAntrian(ws, monitorId) {
     } else {
       const waktu_panggil = results;
       const response = [{
-        'fungsi': 'check_current_antrian '+results.waktu_panggil
+        'fungsi': 'check_current_antrian '+results[0].waktu_panggil
       },
       {
         'status': 'ok'
