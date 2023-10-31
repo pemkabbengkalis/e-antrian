@@ -73,7 +73,7 @@ function getCurrentAntrian(ws, monitorId) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const waktu_panggil = results[0];
-      const querAntrianBelumDipanggil = `SSELECT * FROM antrian_panggil_detail
+      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
       LEFT JOIN antrian_detail USING(id_antrian_detail)
       LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
       LEFT JOIN antrian_kategori USING(id_antrian_kategori)
@@ -85,12 +85,12 @@ function getCurrentAntrian(ws, monitorId) {
           console.error('Error fetching data from the database: ' + error);
         } else {
           const resulttime = [{
-            'currentDate': currentDate
-          },
-          {
-            'currentTime':waktu_panggil['waktu_panggil']
-          }
-        ]
+              'currentDate': currentDate
+            },
+            {
+              'currentTime': waktu_panggil['waktu_panggil']
+            }
+          ]
           const response = [{
               'fungsi': 'check_current_antrian'
             },
@@ -99,8 +99,8 @@ function getCurrentAntrian(ws, monitorId) {
             },
             {
               'data': results
-            },{
-              'TIME':resulttime
+            }, {
+              'TIME': resulttime
             }
           ];
 
