@@ -85,7 +85,7 @@ function getCurrentAntrian(ws, monitorId) {
           console.error('Error fetching data from the database: ' + error);
         } else {
           const response = [{
-              'fungsi': 'check_current_antrian'
+              'fungsi': 'check_current_antrian '+waktu_panggil.waktu_panggil
             },
             {
               'status': 'ok'
