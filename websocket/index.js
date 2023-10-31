@@ -74,23 +74,23 @@ function getCurrentAntrian(ws, monitorId) {
     } else {
       const waktu_panggil = results[0];
       const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
-      LEFT JOIN antrian_detail USING(id_antrian_detail)
-      LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
-      LEFT JOIN antrian_kategori USING(id_antrian_kategori)
-      LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-      LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-      WHERE id_setting_layar = 4 AND tanggal = "2023-10-31" AND waktu_panggil > "08:15:35" LIMIT 1`;
+				LEFT JOIN antrian_detail USING(id_antrian_detail)
+				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
+				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}" AND waktu_panggil > "${waktu_panggil['waktu_panggil']}"`;
       db.query(querAntrianBelumDipanggil, (error, results) => {
         if (error) {
           console.error('Error fetching data from the database: ' + error);
         } else {
           const resulttime = [{
-              'currentDate': currentDate
-            },
-            {
-              'currentTime': waktu_panggil['waktu_panggil']
-            }
-          ]
+            'currentDate': currentDate
+          },
+          {
+            'currentTime':waktu_panggil['waktu_panggil']
+          }
+        ]
           const response = [{
               'fungsi': 'check_current_antrian'
             },
@@ -99,8 +99,8 @@ function getCurrentAntrian(ws, monitorId) {
             },
             {
               'data': results
-            }, {
-              'TIME': resulttime
+            },{
+              'TIME':resulttime
             }
           ];
 

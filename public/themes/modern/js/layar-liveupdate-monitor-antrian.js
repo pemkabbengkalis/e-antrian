@@ -86,25 +86,27 @@ connectWebSocket();
 
 
 function check_current_antrian(data) {
-	if (Array.isArray(data) && data.length > 0) {
-		data_layar_antrian.push(data.data);
-		addAudio(data.data);
-		if (audio_ended) {
-			if (player) {
-				current_volume = player.volume;
-				new_volume = 5 / 100 * current_volume;
-				console.log(current_volume);
-				console.log(new_volume.toFixed(2));
-				player.volume = new_volume.toFixed(2);
-			}
-			playSound()
-		}
+    if (Array.isArray(data) && data.length > 0) {
+        var firstElement = data[0]; // Mengambil elemen pertama dari data
 
-	} else {
+        data_layar_antrian.push(firstElement);
+        addAudio(firstElement);
 
-	}
-
+        if (audio_ended) {
+            if (player) {
+                current_volume = player.volume;
+                new_volume = 5 / 100 * current_volume;
+                console.log(current_volume);
+                console.log(new_volume.toFixed(2));
+                player.volume = new_volume.toFixed(2);
+            }
+            playSound();
+        }
+    } else {
+        // Tindakan yang harus diambil jika data kosong atau bukan array
+    }
 }
+
 
 function check_perubahan_antrian(data) {
 	if (data) {
