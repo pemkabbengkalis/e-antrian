@@ -21,6 +21,11 @@ if (@$styles) {
 ?>
 <link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/themes/modern/css/layar-monitor-show-'.$setting['color_scheme'].'.css?r='.time()?>"/>
 <style>
+
+.bgmotif {
+	height: 100%;
+	background-image: url('<?=$config->baseURL . 'public/images/bgmotif.png' ?>');
+}
 /* Bootbox */
 .bootbox-close-button {
 	border: 0;
@@ -92,7 +97,7 @@ window.onload = function() {
 };
 </script>
 </head>
-<body>
+<body class="bgmotif">
 	<div class="block-container">
 		<header class="shadow-sm">
 			<div class="header-left-container">
