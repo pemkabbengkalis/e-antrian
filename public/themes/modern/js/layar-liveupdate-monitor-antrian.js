@@ -91,7 +91,7 @@ function check_current_antrian(data) {
     if (Array.isArray(data) && data.length > 0) {
         var firstElement = data[0]; // Mengambil elemen pertama dari data
 
-        if (!lastAddedData || !isEqual(firstElement, lastAddedData)) {
+        if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
             data_layar_antrian.push(firstElement);
             addAudio(firstElement);
 
@@ -112,6 +112,7 @@ function check_current_antrian(data) {
         // Tindakan yang harus diambil jika data kosong atau bukan array
     }
 }
+
 
 
 
