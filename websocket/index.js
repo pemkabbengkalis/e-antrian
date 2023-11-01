@@ -8,7 +8,7 @@ import {
 } from 'url';
 import fs from 'fs';
 
-var monitorId;
+
 const currentDate = new Date().toISOString().split('T')[0];
 
 
@@ -22,6 +22,8 @@ const db = mysql.createPool({
   password: 'mpp@2023',
   database: 'loca_antrian',
 });
+
+const clients = {}; 
 
 //ONLINE KEY
 const server = https.createServer({
@@ -40,13 +42,14 @@ server.on('upgrade', (request, socket, head) => {
     pathname,
     query
   } = parse(request.url, true);
-  monitorId = query.id;
+  const monitorId = query.id;
   wss.handleUpgrade(request, socket, head, (ws) => {
-    wss.emit('connection', ws, request);
+    clients[monitorId] = ws;
+    wss.emit('connection', ws, request, monitorId);
   });
 });
 
-wss.on('connection', function connection(ws) {
+wss.on('connection', function connection(ws, request, monitorId) {
   ws.on('message', function message(data) {
     try {
       getCurrentAntrian(ws, monitorId);
@@ -63,6 +66,7 @@ wss.on('connection', function connection(ws) {
 
   ws.on('close', () => {
     clearInterval(interval);
+    delete clients[monitorId]; // Hapus koneksi yang sudah ditutup
   });
 });
 
@@ -86,7 +90,7 @@ function getCurrentAntrian(ws, monitorId) {
 				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
 				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
 				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-				WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}" AND waktu_panggil = "${waktu_panggil['waktu_panggil']}"`;
+				WHERE tanggal = "${currentDate}" AND waktu_panggil = "${waktu_panggil['waktu_panggil']}" AND id_setting_layar = ${monitorId}`;
       db.query(querAntrianBelumDipanggil, (error, results) => {
         if (error) {
           console.error('Error fetching data from the database: ' + error);
