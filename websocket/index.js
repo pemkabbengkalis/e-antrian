@@ -114,7 +114,7 @@ function getCurrentAntrian(ws, monitorId) {
   console.log('waktu panggil terakhir', formatWaktu());
       if (selisihDetik(wp,formatWaktu()) <=10) {
         console.log('benar ini','ok')
-      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = time("${wp.toString()}") AND id_setting_layar = "${monitorId}"`;
+      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = "${wp}" AND id_setting_layar = "${monitorId}"`;
       db.query(querAntrianBelumDipanggil, (error, results) => {
         if (error) {
           console.error('Error fetching data from the database: ' + error);
