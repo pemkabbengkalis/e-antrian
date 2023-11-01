@@ -45,7 +45,7 @@ function connectWebSocket() {
 						// 	fungsi: fungsiValue,
 						// 	data: dataValue
 						// };
-						check_perubahan_antrian(dataValue);
+						//check_perubahan_antrian(dataValue);
 						// console.log("Combined Result:", combinedResult);
 					}
 					break;
@@ -89,7 +89,39 @@ connectWebSocket();
 
 
 
-var lastAddedData = null; // Inisialisasi variabel untuk menyimpan data terakhir
+function setLastAddedDataCookie(data) {
+    // Konversi data menjadi JSON string
+    var dataStr = JSON.stringify(data);
+
+    // Set cookie dengan data terakhir
+    document.cookie = "lastAddedData=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
+}
+
+function getCookieExpiration(days) {
+    var d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); // Waktu kadaluwarsa dalam milidetik
+    var expires = "expires=" + d.toUTCString();
+    return expires;
+}
+
+function getSavedLastAddedData() {
+    var name = "lastAddedData=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookieArray = decodedCookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) == 0) {
+            var dataStr = cookie.substring(name.length, cookie.length);
+            return JSON.parse(dataStr);
+        }
+    }
+    return null;
+}
+
+var lastAddedData = getSavedLastAddedData(); // Mengambil data terakhir dari cookie saat halaman dimuat
 
 function check_current_antrian(data) {
     if (Array.isArray(data) && data.length > 0) {
@@ -111,11 +143,13 @@ function check_current_antrian(data) {
             }
 
             lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
+            setLastAddedDataCookie(lastAddedData); // Menyimpan data terakhir ke dalam cookie
         }
     } else {
         // Tindakan yang harus diambil jika data kosong atau bukan array
     }
 }
+
 
 
 
