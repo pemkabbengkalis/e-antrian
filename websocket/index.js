@@ -107,7 +107,7 @@ function getCurrentAntrian(ws, monitorId) {
             {
               'data': results
             },{
-              'TIME':resulttime
+              'ID LAYAR':monitorId
             }
           ];
 
