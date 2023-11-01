@@ -12,8 +12,9 @@ footer {
 }
 
 .current-antrian {
-	background: #ffc5c5;
-    color: #22242e;
+    background: #f19b9b;
+    color: #bf2c27;
+    font-weight: bold;
 }
 
 .current-antrian-title, .current-antrian-tujuan {
