@@ -1,4 +1,5 @@
-import https from 'http'; // Menggunakan 'http' daripada 'https'
+// import https from 'http'; // LOCAL'
+import https from 'https'; // LIVE
 import {
   WebSocketServer
 } from 'ws';
@@ -31,26 +32,36 @@ const wss = new WebSocketServer({
   noServer: true
 }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
 
+//Env Server
 const db = mysql.createPool({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '',
-  database: 'e-antrian',
+  host: '10.20.30.252',
+  user: 'loca_antrian',
+  password: 'mpp@2023',
+  database: 'loca_antrian',
 });
+
+//Env Local
+// const db = mysql.createPool({
+//   host: '127.0.0.1',
+//   user: 'root',
+//   password: '',
+//   database: 'e-antrian',
+// });
 
 const clients = {}; 
 
 //ONLINE KEY
-const server = https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
-});
+// const server = https.createServer({
+//   key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
+//   cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
+
+// });
 
 //LOCAL KEY
-// const server = https.createServer({
-//   key: fs.readFileSync('server-key.pem'),
-//   cert: fs.readFileSync('server-cert.pem'),
-// });
+const server = https.createServer({
+  key: fs.readFileSync('server-key.pem'),
+  cert: fs.readFileSync('server-cert.pem'),
+});
 
 server.on('upgrade', (request, socket, head) => {
   const {
