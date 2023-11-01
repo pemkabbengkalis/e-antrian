@@ -26,8 +26,8 @@ header {
 .header-left-container .detail {
 	margin-top: -7px;
 }
-.header-left-container img{
-	max-height:60px;
+.header-left-container img {
+    max-height: 78px;
 }
 .header-left-container p{
 	margin: 0;
@@ -44,8 +44,9 @@ header {
 	margin-right: 10px;
 }
 .logo-text {
-	text-transform: uppercase;
-	font-size: 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
 }
 .header-right-container {
 	text-align: right;
