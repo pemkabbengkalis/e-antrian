@@ -112,38 +112,42 @@ function getCurrentAntrian(ws, monitorId) {
       const waktu_panggil = results[0];
       const wp = waktu_panggil['waktu_panggil'];
   console.log('waktu panggil terakhir', formatWaktu());
-      if (selisihDetik(wp,formatWaktu()) <=10) {
-        console.log('benar ini','ok')
-      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = "${wp}" AND id_setting_layar = "${monitorId}"`;
-      db.query(querAntrianBelumDipanggil, (error, results) => {
-        if (error) {
-          console.error('Error fetching data from the database: ' + error);
-        } else {
-          console.log('Berhasil dapat antrian baru', wp.toString());
-          const resulttime = [{
-            'currentDate': currentDate
-          },
-          {
-            'currentTime':waktu_panggil['waktu_panggil']
-          }
-        ]
-          const response = [{
-              'fungsi': 'check_current_antrian'
-            },
-            {
-              'status': 'ok'
-            },
-            {
-              'data': results
-            },{
-              'ID LAYAR':monitorId
-            }
-          ];
 
-          ws.send(JSON.stringify(response));
+      if(wp != null){
+        if (selisihDetik(wp,formatWaktu()) <=10) {
+          console.log('benar ini','ok')
+        const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = "${wp}" AND id_setting_layar = "${monitorId}"`;
+        db.query(querAntrianBelumDipanggil, (error, results) => {
+          if (error) {
+            console.error('Error fetching data from the database: ' + error);
+          } else {
+            console.log('Berhasil dapat antrian baru', wp.toString());
+            const resulttime = [{
+              'currentDate': currentDate
+            },
+            {
+              'currentTime':waktu_panggil['waktu_panggil']
+            }
+          ]
+            const response = [{
+                'fungsi': 'check_current_antrian'
+              },
+              {
+                'status': 'ok'
+              },
+              {
+                'data': results
+              },{
+                'ID LAYAR':monitorId
+              }
+            ];
+  
+            ws.send(JSON.stringify(response));
+          }
+        });
         }
-      });
       }
+     
         
     }
   });
