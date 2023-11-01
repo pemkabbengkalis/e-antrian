@@ -1,4 +1,4 @@
-import https from 'https'; // Menggunakan 'http' daripada 'https'
+import https from 'http'; // Menggunakan 'http' daripada 'https'
 import {
   WebSocketServer
 } from 'ws';
@@ -10,25 +10,40 @@ import fs from 'fs';
 
 
 const currentDate = new Date().toISOString().split('T')[0];
+function formatWaktu() {
+  const waktuSaatIni = new Date();
+  const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
+  const menit = String(waktuSaatIni.getMinutes()).padStart(2, '0');
+  const detik = String(waktuSaatIni.getSeconds()).padStart(2, '0');
 
+  return `${jam}:${menit}:${detik}`;
+}
+function selisihDetik(waktu1, waktu2) {
+  const [jam1, menit1, detik1] = waktu1.split(':').map(Number);
+  const [jam2, menit2, detik2] = waktu2.split(':').map(Number);
 
+  const totalDetik1 = (jam1 * 3600) + (menit1 * 60) + detik1;
+  const totalDetik2 = (jam2 * 3600) + (menit2 * 60) + detik2;
+
+  return Math.abs(totalDetik1 - totalDetik2);
+}
 const wss = new WebSocketServer({
   noServer: true
 }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
 
 const db = mysql.createPool({
-  host: '10.20.30.252',
-  user: 'loca_antrian',
-  password: 'mpp@2023',
-  database: 'loca_antrian',
+  host: '127.0.0.1',
+  user: 'root',
+  password: '',
+  database: 'e-antrian',
 });
 
 const clients = {}; 
 
 //ONLINE KEY
 const server = https.createServer({
-  key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
-  cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem'),
 });
 
 //LOCAL KEY
@@ -77,24 +92,23 @@ function getCurrentAntrian(ws, monitorId) {
   LEFT JOIN antrian_detail USING(id_antrian_detail)
   LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
   LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-  WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}"`;
+  WHERE id_setting_layar = ${monitorId} AND tanggal = "${currentDate}" `;
   //hasilnya : 03:59:43;
   db.query(query, (error, results) => {
     if (error) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const waktu_panggil = results[0];
-      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail
-				LEFT JOIN antrian_detail USING(id_antrian_detail)
-				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
-				LEFT JOIN antrian_kategori USING(id_antrian_kategori)
-				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
-				WHERE tanggal = "${currentDate}" AND waktu_panggil = "${waktu_panggil['waktu_panggil']}" AND id_setting_layar = ${monitorId}`;
+      const wp = waktu_panggil['waktu_panggil'];
+  console.log('waktu panggil terakhir', formatWaktu());
+      if (selisihDetik(wp,formatWaktu()) <=10) {
+        console.log('benar ini','ok')
+      const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = time("${wp.toString()}") AND id_setting_layar = "${monitorId}"`;
       db.query(querAntrianBelumDipanggil, (error, results) => {
         if (error) {
           console.error('Error fetching data from the database: ' + error);
         } else {
+          console.log('Berhasil dapat antrian baru', wp.toString());
           const resulttime = [{
             'currentDate': currentDate
           },
@@ -118,6 +132,8 @@ function getCurrentAntrian(ws, monitorId) {
           ws.send(JSON.stringify(response));
         }
       });
+      }
+        
     }
   });
 }
