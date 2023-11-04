@@ -10,24 +10,24 @@ import {
 import fs from 'fs';
 
 
-const currentDate = new Date().toISOString().split('T')[0];
-function formatWaktu() {
-  const waktuSaatIni = new Date();
-  const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
-  const menit = String(waktuSaatIni.getMinutes()).padStart(2, '0');
-  const detik = String(waktuSaatIni.getSeconds()).padStart(2, '0');
+// const currentDate = new Date().toISOString().split('T')[0];
+// function formatWaktu() {
+//   const waktuSaatIni = new Date();
+//   const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
+//   const menit = String(waktuSaatIni.getMinutes()).padStart(2, '0');
+//   const detik = String(waktuSaatIni.getSeconds()).padStart(2, '0');
 
-  return `${jam}:${menit}:${detik}`;
-}
-function selisihDetik(waktu1, waktu2) {
-  const [jam1, menit1, detik1] = waktu1.split(':').map(Number);
-  const [jam2, menit2, detik2] = waktu2.split(':').map(Number);
+//   return `${jam}:${menit}:${detik}`;
+// }
+// function selisihDetik(waktu1, waktu2) {
+//   const [jam1, menit1, detik1] = waktu1.split(':').map(Number);
+//   const [jam2, menit2, detik2] = waktu2.split(':').map(Number);
 
-  const totalDetik1 = (jam1 * 3600) + (menit1 * 60) + detik1;
-  const totalDetik2 = (jam2 * 3600) + (menit2 * 60) + detik2;
+//   const totalDetik1 = (jam1 * 3600) + (menit1 * 60) + detik1;
+//   const totalDetik2 = (jam2 * 3600) + (menit2 * 60) + detik2;
 
-  return Math.abs(totalDetik1 - totalDetik2);
-}
+//   return Math.abs(totalDetik1 - totalDetik2);
+// }
 const wss = new WebSocketServer({
   noServer: true
 }); // Menggunakan noServer: true agar WebSocketServer tidak membuat server HTTP
@@ -113,9 +113,7 @@ function getCurrentAntrian(ws, monitorId) {
       const wp = waktu_panggil['waktu_panggil'];
   console.log('waktu panggil terakhir', formatWaktu());
 
-      if(wp != null){
-        if (selisihDetik(wp,formatWaktu()) <=10) {
-          console.log('benar ini','ok')
+     
         const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = "${wp}" AND id_setting_layar = "${monitorId}"`;
         db.query(querAntrianBelumDipanggil, (error, results) => {
           if (error) {
@@ -145,8 +143,8 @@ function getCurrentAntrian(ws, monitorId) {
             ws.send(JSON.stringify(response));
           }
         });
-        }
-      }
+        
+     
      
         
     }
