@@ -10,7 +10,7 @@ import {
 import fs from 'fs';
 
 
-// const currentDate = new Date().toISOString().split('T')[0];
+const currentDate = new Date().toISOString().split('T')[0];
 // function formatWaktu() {
 //   const waktuSaatIni = new Date();
 //   const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
@@ -110,16 +110,32 @@ function getCurrentAntrian(ws, monitorId) {
       console.error('Error fetching data from the database: ' + error);
     } else {
       const waktu_panggil = results[0];
-      const wp = waktu_panggil['waktu_panggil'];
-  console.log('waktu panggil terakhir', formatWaktu());
-
-     
+      const wp = waktu_panggil['waktu_panggil'];     
         const querAntrianBelumDipanggil = `SELECT * FROM antrian_panggil_detail LEFT JOIN antrian_detail USING(id_antrian_detail) LEFT JOIN antrian_tujuan USING(id_antrian_tujuan) LEFT JOIN antrian_kategori USING(id_antrian_kategori) LEFT JOIN setting_layar_detail USING(id_antrian_kategori) LEFT JOIN antrian_panggil USING(id_antrian_panggil) WHERE tanggal = "${currentDate}" AND waktu_panggil = "${wp}" AND id_setting_layar = "${monitorId}"`;
         db.query(querAntrianBelumDipanggil, (error, results) => {
           if (error) {
             console.error('Error fetching data from the database: ' + error);
           } else {
-            console.log('Berhasil dapat antrian baru', wp.toString());
+              const filteredResults = results.map(result => {
+              if (Array.isArray(result)) {
+                // If the result is an array, filter out "tgl_update" property from each object in the array
+                return result.map(obj => {
+                  if (obj && typeof obj === 'object') {
+                    // Check if obj is an object
+                    delete obj.tgl_update; // Remove the "tgl_update" property
+                    delete obj.time_ambil; // Remove the "tgl_update" property
+                    delete obj.jml_antrian; // Remove the "tgl_update" property
+                  }
+                  return obj;
+                });
+              } else if (result && typeof result === 'object') {
+                // If the result is an object, filter out "tgl_update" property from the object
+                delete result.tgl_update; // Remove the "tgl_update" property
+                delete result.time_ambil; // Remove the "tgl_update" property
+                delete result.jml_antrian; // Remove the "tgl_update" property
+              }
+              return result;
+            });
             const resulttime = [{
               'currentDate': currentDate
             },
