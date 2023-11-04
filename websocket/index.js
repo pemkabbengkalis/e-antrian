@@ -10,7 +10,7 @@ import {
 import fs from 'fs';
 
 
-// const currentDate = new Date().toISOString().split('T')[0];
+const currentDate = new Date().toISOString().split('T')[0];
 // function formatWaktu() {
 //   const waktuSaatIni = new Date();
 //   const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
