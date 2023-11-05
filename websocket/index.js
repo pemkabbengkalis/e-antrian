@@ -122,7 +122,7 @@ function getCurrentAntrian(ws, monitorId) {
                 return result.map(obj => {
                   if (obj && typeof obj === 'object') {
                     // Check if obj is an object
-                    delete obj.tgl_update; // Remove the "tgl_update" property
+                    //delete obj.tgl_update; // Remove the "tgl_update" property
                     delete obj.time_ambil; // Remove the "tgl_update" property
                     delete obj.jml_antrian; // Remove the "tgl_update" property
                   }
@@ -130,7 +130,7 @@ function getCurrentAntrian(ws, monitorId) {
                 });
               } else if (result && typeof result === 'object') {
                 // If the result is an object, filter out "tgl_update" property from the object
-                delete result.tgl_update; // Remove the "tgl_update" property
+                //delete result.tgl_update; // Remove the "tgl_update" property
                 delete result.time_ambil; // Remove the "tgl_update" property
                 delete result.jml_antrian; // Remove the "tgl_update" property
               }
