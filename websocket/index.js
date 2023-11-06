@@ -8,9 +8,10 @@ import {
   parse
 } from 'url';
 import fs from 'fs';
-
-
-const currentDate = new Date().toISOString().split('T')[0];
+import moment from 'moment-timezone'; // Impor modul moment-timezone
+moment.tz.setDefault('Asia/Jakarta'); // Atur zona waktu default
+const currentDate = moment().format('YYYY-MM-DD'); // Gunakan moment untuk mengambil tanggal saat ini
+const currentTime = moment().format('HH:mm:ss'); // Gunakan moment untuk mengambil waktu saat ini
 // function formatWaktu() {
 //   const waktuSaatIni = new Date();
 //   const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
@@ -140,7 +141,7 @@ function getCurrentAntrian(ws, monitorId) {
               'currentDate': currentDate
             },
             {
-              'currentTime':waktu_panggil['waktu_panggil']
+              'currentTime':currentTime
             }
           ]
             const response = [{
