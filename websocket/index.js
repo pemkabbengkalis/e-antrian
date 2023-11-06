@@ -153,6 +153,8 @@ function getCurrentAntrian(ws, monitorId) {
                 'data': results
               },{
                 'ID LAYAR':monitorId
+              },{
+                'time_capture':resulttime
               }
             ];
   
