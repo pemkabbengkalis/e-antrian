@@ -52,17 +52,17 @@ const db = mysql.createPool({
 const clients = {}; 
 
 //ONLINE KEY
-// const server = https.createServer({
-//   key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
-//   cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
+const server = https.createServer({
+  key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
+  cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
 
-// });
+});
 
 //LOCAL KEY
-const server = https.createServer({
-  key: fs.readFileSync('server-key.pem'),
-  cert: fs.readFileSync('server-cert.pem'),
-});
+// const server = https.createServer({
+//   key: fs.readFileSync('server-key.pem'),
+//   cert: fs.readFileSync('server-cert.pem'),
+// });
 
 server.on('upgrade', (request, socket, head) => {
   const {
