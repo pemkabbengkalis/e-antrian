@@ -9,10 +9,10 @@ current_volume = '';
 
 
 //WEBSOCKET SERVER
-var websocketURL = 'wss://10.20.30.252:8443?id=' + $('#id-setting-layar').text();
+// var websocketURL = 'wss://10.20.30.252:8443?id=' + $('#id-setting-layar').text();
 
 //LOCAL
-// var websocketURL = 'wss://localhost:8443?id=' + $('#id-setting-layar').text();
+var websocketURL = 'wss://localhost:8443?id=' + $('#id-setting-layar').text();
 
 
 function connectWebSocket() {
@@ -63,7 +63,22 @@ function connectWebSocket() {
 						check_current_antrian(dataValue);
 						// console.log("Combined Result:", combinedResult);
 					}
-					break
+					break;
+				case 'check_panggil_ulang':
+					console.log("jalan kan fungsi check_panggil_ulang");
+					if (receivedData[2] && receivedData[2].data) {
+						var dataValue = receivedData[2].data;
+						console.log("CURRENT 'data':", dataValue);
+
+						// Di sini Anda dapat menggabungkan nilai 'fungsi' dan 'data' sesuai kebutuhan.
+						// var combinedResult = {
+						// 	fungsi: fungsiValue,
+						// 	data: dataValue
+						// };
+						check_panggil_ulang(dataValue);
+						// console.log("Combined Result:", combinedResult);
+					}
+					break;
 
 				default:
 					break;
@@ -151,7 +166,60 @@ function check_current_antrian(data) {
     }
 }
 
+function setLastAddedDataCookiePanggilUlang(data) {
+    // Konversi data menjadi JSON string
+    var dataStr = JSON.stringify(data);
 
+    // Set cookie dengan data terakhir
+    document.cookie = "lastAddedDataPanggilUlang=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
+}
+
+function getSavedLastAddedDataPanggilUlang() {
+    var name = "lastAddedDataPanggilUlang=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookieArray = decodedCookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) == 0) {
+            var dataStr = cookie.substring(name.length, cookie.length);
+            return JSON.parse(dataStr);
+        }
+    }
+    return null;
+}
+
+//Check Panggil Ulang
+var lastAddedData = getSavedLastAddedDataPanggilUlang(); 
+function check_panggil_ulang(data) {
+	if (Array.isArray(data) && data.length > 0) {
+        var firstElement = data[0]; // Mengambil elemen pertama dari data
+
+        if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
+			console.log("TESTETSTE",data);
+            addAudio(firstElement);
+
+            if (audio_ended) {
+                if (player) {
+                    current_volume = player.volume;
+                    new_volume = 5 / 100 * current_volume;
+                    console.log(current_volume);
+                    console.log(new_volume.toFixed(2));
+                    player.volume = new_volume.toFixed(2);
+                }
+                playSound();
+            }
+
+            lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
+            setLastAddedDataCookiePanggilUlang(lastAddedData); // Menyimpan data terakhir ke dalam cookie
+        }
+    } else {
+        // Tindakan yang harus diambil jika data kosong atau bukan array
+    }
+    
+}
 
 
 
