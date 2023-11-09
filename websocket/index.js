@@ -8,9 +8,10 @@ import {
   parse
 } from 'url';
 import fs from 'fs';
-
-
-const currentDate = new Date().toISOString().split('T')[0];
+import moment from 'moment-timezone'; // Impor modul moment-timezone
+moment.tz.setDefault('Asia/Jakarta'); // Atur zona waktu default
+const currentDate = moment().format('YYYY-MM-DD'); // Gunakan moment untuk mengambil tanggal saat ini
+const currentTime = moment().format('HH:mm:ss'); // Gunakan moment untuk mengambil waktu saat ini
 // function formatWaktu() {
 //   const waktuSaatIni = new Date();
 //   const jam = String(waktuSaatIni.getHours()).padStart(2, '0');
@@ -51,17 +52,17 @@ const db = mysql.createPool({
 const clients = {}; 
 
 //ONLINE KEY
-const server = https.createServer({
-  key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
-  cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
+// const server = https.createServer({
+//   key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
+//   cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
 
-});
+// });
 
 //LOCAL KEY
-// const server = https.createServer({
-//   key: fs.readFileSync('server-key.pem'),
-//   cert: fs.readFileSync('server-cert.pem'),
-// });
+const server = https.createServer({
+  key: fs.readFileSync('server-key.pem'),
+  cert: fs.readFileSync('server-cert.pem'),
+});
 
 server.on('upgrade', (request, socket, head) => {
   const {
@@ -80,6 +81,8 @@ wss.on('connection', function connection(ws, request, monitorId) {
     try {
       getCurrentAntrian(ws, monitorId);
       getLastAntrianUpdate(ws, monitorId);
+      getLastAntrianAmbilUlang(ws,monitorId);
+      
     } catch (error) {
       console.error('Error parsing client data: ' + error);
     }
@@ -88,6 +91,7 @@ wss.on('connection', function connection(ws, request, monitorId) {
   const interval = setInterval(() => {
     getCurrentAntrian(ws, monitorId);
     getLastAntrianUpdate(ws, monitorId);
+    getLastAntrianAmbilUlang(ws,monitorId);
   }, 1000);
 
   ws.on('close', () => {
@@ -95,6 +99,64 @@ wss.on('connection', function connection(ws, request, monitorId) {
     delete clients[monitorId]; // Hapus koneksi yang sudah ditutup
   });
 });
+
+/*Antrian Panggil Ulang */
+function getLastAntrianAmbilUlang(ws,monitorId){
+  const query = `SELECT * 
+  FROM antrian_panggil_ulang 
+  WHERE id_setting_layar = ? AND tanggal_panggil_ulang = ? 
+  ORDER BY waktu_panggil_ulang DESC LIMIT 1`;
+  db.query(query, [monitorId, currentDate], (error, results) => {
+    if(error){
+      console.error('Error fetching data from the database: ' + error);
+    }else{
+        const hasil = results[0];
+        const perubahan_terakhir = (results && results.length > 0) ? hasil['waktu_panggil_ulang'] : '00:00:00';
+        const cekLastAntrianAmbilUlang = `SELECT * 
+				FROM antrian_panggil_ulang 
+				WHERE id_setting_layar = ? AND tanggal_panggil_ulang = ? AND waktu_panggil_ulang > ?`;
+        db.query(cekLastAntrianAmbilUlang,[monitorId,currentDate,perubahan_terakhir],(error,results) =>{
+          if(error){
+            console.error('Error fetching data from the database: ' + error);
+          }else{
+            if(results != null){
+              const getPanggilUlang = `SELECT *, nomor_panggil AS jml_dipanggil
+              FROM antrian_panggil_ulang
+              LEFT JOIN antrian_panggil_detail USING(id_antrian_panggil_detail)	
+              LEFT JOIN antrian_detail USING(id_antrian_detail)
+              LEFT JOIN antrian_kategori USING(id_antrian_kategori)
+              LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+              WHERE id_setting_layar = ? AND tanggal_panggil_ulang = ? AND waktu_panggil_ulang > ?`;
+              db.query(getPanggilUlang,[monitorId,currentDate,perubahan_terakhir],(error,results) => {
+
+                if(error){
+                  console.error('Error fetching data from the database: ' + error);
+                }else{
+                  const response = [{
+                    'fungsi': 'check_panggil_ulang'
+                  },
+                  {
+                    'status': 'ok'
+                  },
+                  {
+                    'data': results
+                  },{
+                    'ID LAYAR':monitorId
+                  }
+                ];
+      
+                ws.send(JSON.stringify(response));
+                }
+
+              });
+            }
+            
+          }
+        });
+      
+    }
+  });
+}
 
 /*current Antrian*/
 
@@ -140,7 +202,7 @@ function getCurrentAntrian(ws, monitorId) {
               'currentDate': currentDate
             },
             {
-              'currentTime':waktu_panggil['waktu_panggil']
+              'currentTime':currentTime
             }
           ]
             const response = [{
