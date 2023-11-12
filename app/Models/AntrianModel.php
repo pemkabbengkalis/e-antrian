@@ -214,9 +214,40 @@ class AntrianModel extends \App\Models\BaseModel
 		{
 			$data_db['tgl_update'] = date('Y-m-d H:i:s');
 			$data_db['id_user_update'] = $_SESSION['user']['id_user'];
+			if(!empty($_FILES['logo'])){	
+			$file = $this->request->getFile('logo');
+			$path = ROOTPATH . 'public/images/logo/';
+			$sql = 'SELECT * FROM antrian_kategori WHERE id_antrian_kategori = ?';
+			$img_db = $this->db->query($sql, $_POST['id'])->getRowArray();
+			$new_name = $img_db['logo'];	
+			if ($file && $file->getName()) 
+			{
+				//old file
+				if ($img_db['logo']) {
+					if (file_exists($path . $img_db['logo'])) {
+						$unlink = delete_file($path . $img_db['logo']);
+						if (!$unlink) {
+							$result = ['status' => 'error', 'message' => 'Gagal menghapus gambar lama'];
+						}
+					}
+				}
+							
+				helper('upload_file');
+				$new_name =  get_filename($file->getName(), $path);
+				$file->move($path, $new_name);
+				if (!$file->hasMoved()) {
+					$result = ['status' => 'error', 'message' => 'Error saat memperoses gambar'];
+					return $result;
+				}
+			}
+			
+			// Update avatar
+			$data_db['logo'] = $new_name;
+		}
 			$query = $this->db->table('antrian_kategori')->update($data_db, ['id_antrian_kategori' => $_POST['id']]);
 
-		} else {
+		}
+		else {
 
 			$data_db['tgl_input'] = date('Y-m-d H:i:s');
 			$data_db['id_user_input'] = $_SESSION['user']['id_user'];
