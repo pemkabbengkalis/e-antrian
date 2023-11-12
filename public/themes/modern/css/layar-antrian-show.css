@@ -31,8 +31,35 @@ button.ambil-antrian {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    height: 70vh;
+    position: relative;
+    overflow: scroll;
+    gap: 20px;
     align-content: flex-start;
     justify-content: center;
+}
+.name-kategori {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin: auto 30px;
+}
+.img-antrian-logo{
+
+        height: 100px;
+        align-items: center;
+        width: 100px;
+        object-fit: cover;
+    
+}
+.card-list-kategori{
+
+        border: none;
+        width: 250px;
+        border-radius: 20px;
+        height: 250px;
+        padding: 30px 0px;
+    
 }
 .ambil-antrian {
 	transition: all .3s;

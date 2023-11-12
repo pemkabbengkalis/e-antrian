@@ -130,14 +130,20 @@ window.onload = function() {
 					
 					<?php
 					// echo '<pre>'; print_r($antrian_detail); die;
-					$list_background = ['#9e26fb', '#00cf85', '#ee4e57', '#308ded', '#ff9541'];
+					// $list_background = ['#9e26fb', '#00cf85', '#ee4e57', '#308ded', '#ff9541'];
 					$index = 0;
 					foreach ($antrian_kategori as $val) {
-						echo '<button style="background:' . $list_background[$index] . '" class="btn ambil-antrian" data-id-antrian-kategori="' . $val['id_antrian_kategori'] . '"><span>' . $val['nama_antrian_kategori'] . '</span></button>';
+						?>
+						<div class="card card-list-kategori"  data-id-antrian-kategori="<?php echo $val['id_antrian_kategori']  ?>">
+						    <?php if(!empty($val['logo']))
+								echo '<center><img class="img-antrian-logo" src="'.$config->baseURL . 'public/images/logo/' .$val['logo'].'" alt=""></center>';
+							?>
+							<div class="name-kategori"><?php echo $val['nama_antrian_kategori']; ?></div>
+					    </div>
+						<?php
+						//echo '<button style="background:' . $list_background[$index] . '" class="btn ambil-antrian" data-id-antrian-kategori="' . $val['id_antrian_kategori'] . '"><span>' . $val['nama_antrian_kategori'] . '</span></button>';
 						$index++;
-						if ($index > ( count($list_background) - 1 ) ) {
-							$index = 0;
-						}
+						
 						
 					}
 					?>
