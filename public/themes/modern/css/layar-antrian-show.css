@@ -44,13 +44,11 @@ body{
     font-weight: bold;
     /* margin: auto 30px; */
 }
-.img-antrian-logo{
-
-        height: 100px;
-        align-items: center;
-        width: 100px;
-        object-fit: cover;
-    
+.img-antrian-logo {
+    height: 100px;
+    align-items: center;
+    width: 100px;
+    object-fit: contain;
 }
 .card-list-kategori{
 
