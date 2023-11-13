@@ -1,7 +1,7 @@
 body{
 	background: #cbeaff;
 }
-button.ambil-antrian {
+.ambil-antrian {
 	width: 200px;
 	height: 200px;
 	text-align:center;
@@ -62,6 +62,7 @@ button.ambil-antrian {
     
 }
 .ambil-antrian {
+    background-color: white;
 	transition: all .3s;
 }
 

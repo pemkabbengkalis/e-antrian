@@ -10,8 +10,9 @@
 <link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/vendors/sweetalert2/sweetalert2.min.css?r=' . time()?>"/>
 <link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/themes/modern/builtin/css/fonts/'.$setting['font_family'].'.css?r='.time()?>"/>
 <link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/themes/modern/css/layar-show.css?r='.time()?>"/>
-<link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/themes/modern/css/layar-antrian-show.css?r='.time()?>"/>
 <link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/themes/modern/css/layar-monitor-show-'.$setting['color_scheme'].'.css?r='.time()?>"/>
+<link rel="stylesheet" type="text/css" href="<?=$config->baseURL . 'public/themes/modern/css/layar-antrian-show.css?r='.time()?>"/>
+
 <?php
 if (@$styles) {
 	foreach($styles as $file) {
@@ -134,7 +135,7 @@ window.onload = function() {
 					$index = 0;
 					foreach ($antrian_kategori as $val) {
 						?>
-						<div class="card card-list-kategori"  data-id-antrian-kategori="<?php echo $val['id_antrian_kategori']  ?>">
+						<div class="card card-list-kategori ambil-antrian" data-id-antrian-kategori="<?php echo $val['id_antrian_kategori'] ?> ">
 						    <?php if(!empty($val['logo']))
 								echo '<center><img class="img-antrian-logo" src="'.$config->baseURL . 'public/images/logo/' .$val['logo'].'" alt=""></center>';
 							?>
