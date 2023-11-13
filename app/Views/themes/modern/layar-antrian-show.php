@@ -136,10 +136,12 @@ window.onload = function() {
 					foreach ($antrian_kategori as $val) {
 						?>
 						<div class="card card-list-kategori ambil-antrian" data-id-antrian-kategori="<?php echo $val['id_antrian_kategori'] ?> ">
+							<div class="wrap-antrian">
 						    <?php if(!empty($val['logo']))
 								echo '<center><img class="img-antrian-logo" src="'.$config->baseURL . 'public/images/logo/' .$val['logo'].'" alt=""></center>';
 							?>
 							<div class="name-kategori"><?php echo $val['nama_antrian_kategori']; ?></div>
+					        </div>
 					    </div>
 						<?php
 						//echo '<button style="background:' . $list_background[$index] . '" class="btn ambil-antrian" data-id-antrian-kategori="' . $val['id_antrian_kategori'] . '"><span>' . $val['nama_antrian_kategori'] . '</span></button>';

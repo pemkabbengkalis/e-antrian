@@ -39,6 +39,7 @@ body{
     justify-content: center;
 }
 .name-kategori {
+    font-size: 15px;
     text-align: center;
     color: black;
     font-weight: bold;
@@ -49,6 +50,10 @@ body{
     align-items: center;
     width: 100px;
     object-fit: contain;
+}
+.wrap-antrian {
+    flex-direction: column;
+    display: flex;
 }
 .card-list-kategori{
 
