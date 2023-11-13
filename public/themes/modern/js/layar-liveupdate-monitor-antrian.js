@@ -60,7 +60,9 @@ function connectWebSocket() {
 						// 	fungsi: fungsiValue,
 						// 	data: dataValue
 						// };
-						check_current_antrian(dataValue);
+												// Current Antrian
+						check_and_update_data("lastAddedData",dataValue);
+						
 						// console.log("Combined Result:", combinedResult);
 					}
 					break;
@@ -75,7 +77,8 @@ function connectWebSocket() {
 						// 	fungsi: fungsiValue,
 						// 	data: dataValue
 						// };
-						check_panggil_ulang(dataValue);
+						// Panggil Ulang
+						check_and_update_data("lastAddedDataPanggilUlang", dataValue);
 						// console.log("Combined Result:", combinedResult);
 					}
 					break;
@@ -102,15 +105,69 @@ function connectWebSocket() {
 
 connectWebSocket();
 
-
-
-function setLastAddedDataCookie(data) {
-    // Konversi data menjadi JSON string
+function setLastAddedDataCookie(name, data) {
     var dataStr = JSON.stringify(data);
-
-    // Set cookie dengan data terakhir
-    document.cookie = "lastAddedData=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
+    document.cookie = name + "=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
 }
+
+function getSavedLastAddedData(name) {
+    var cookieName = name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookieArray = decodedCookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(cookieName) == 0) {
+            var dataStr = cookie.substring(cookieName.length, cookie.length);
+            return JSON.parse(dataStr);
+        }
+    }
+    return null;
+}
+
+function check_and_update_data(name, data) {
+    var lastAddedData = getSavedLastAddedData(name);
+
+    if (Array.isArray(data) && data.length > 0) {
+        var firstElement = data[0];
+
+        if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
+			data_layar_antrian.push(firstElement);
+            console.log("TESTETSTE", data);
+            addAudio(firstElement);
+
+            if (audio_ended) {
+                if (player) {
+                    current_volume = player.volume;
+                    new_volume = (5 / 100) * current_volume;
+                    console.log(current_volume);
+                    console.log(new_volume.toFixed(2));
+                    player.volume = new_volume.toFixed(2);
+                }
+                playSound();
+            }
+
+            lastAddedData = firstElement;
+            setLastAddedDataCookie(name, lastAddedData);
+        }
+    } else {
+        // Tindakan yang harus diambil jika data kosong atau bukan array
+    }
+}
+
+//     // Set cookie dengan data terakhir
+//     document.cookie = "lastAddedData=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
+// }
+
+
+
+// function setLastAddedDataCookie(data) {
+//     // Konversi data menjadi JSON string
+//     var dataStr = JSON.stringify(data);
+
+
 
 function getCookieExpiration(days) {
     var d = new Date();
@@ -119,107 +176,107 @@ function getCookieExpiration(days) {
     return expires;
 }
 
-function getSavedLastAddedData() {
-    var name = "lastAddedData=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var cookieArray = decodedCookie.split(';');
-    for (var i = 0; i < cookieArray.length; i++) {
-        var cookie = cookieArray[i];
-        while (cookie.charAt(0) == ' ') {
-            cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) == 0) {
-            var dataStr = cookie.substring(name.length, cookie.length);
-            return JSON.parse(dataStr);
-        }
-    }
-    return null;
-}
+// function getSavedLastAddedData() {
+//     var name = "lastAddedData=";
+//     var decodedCookie = decodeURIComponent(document.cookie);
+//     var cookieArray = decodedCookie.split(';');
+//     for (var i = 0; i < cookieArray.length; i++) {
+//         var cookie = cookieArray[i];
+//         while (cookie.charAt(0) == ' ') {
+//             cookie = cookie.substring(1);
+//         }
+//         if (cookie.indexOf(name) == 0) {
+//             var dataStr = cookie.substring(name.length, cookie.length);
+//             return JSON.parse(dataStr);
+//         }
+//     }
+//     return null;
+// }
 
-var lastAddedData = getSavedLastAddedData(); // Mengambil data terakhir dari cookie saat halaman dimuat
+// var lastAddedData = getSavedLastAddedData(); // Mengambil data terakhir dari cookie saat halaman dimuat
 
-function check_current_antrian(data) {
-    if (Array.isArray(data) && data.length > 0) {
-        var firstElement = data[0]; // Mengambil elemen pertama dari data
+// function check_current_antrian(data) {
+//     if (Array.isArray(data) && data.length > 0) {
+//         var firstElement = data[0]; // Mengambil elemen pertama dari data
 
-        if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
-            data_layar_antrian.push(firstElement);
-			console.log("TESTETSTE",data);
-            addAudio(firstElement);
+//         if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
+//             data_layar_antrian.push(firstElement);
+// 			console.log("TESTETSTE",data);
+//             addAudio(firstElement);
 
-            if (audio_ended) {
-                if (player) {
-                    current_volume = player.volume;
-                    new_volume = 5 / 100 * current_volume;
-                    console.log(current_volume);
-                    console.log(new_volume.toFixed(2));
-                    player.volume = new_volume.toFixed(2);
-                }
-                playSound();
-            }
+//             if (audio_ended) {
+//                 if (player) {
+//                     current_volume = player.volume;
+//                     new_volume = 5 / 100 * current_volume;
+//                     console.log(current_volume);
+//                     console.log(new_volume.toFixed(2));
+//                     player.volume = new_volume.toFixed(2);
+//                 }
+//                 playSound();
+//             }
 
-            lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
-            setLastAddedDataCookie(lastAddedData); // Menyimpan data terakhir ke dalam cookie
-        }
-    } else {
-        // Tindakan yang harus diambil jika data kosong atau bukan array
-    }
-}
+//             lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
+//             setLastAddedDataCookie(lastAddedData); // Menyimpan data terakhir ke dalam cookie
+//         }
+//     } else {
+//         // Tindakan yang harus diambil jika data kosong atau bukan array
+//     }
+// }
 
-function setLastAddedDataCookiePanggilUlang(data) {
-    // Konversi data menjadi JSON string
-    var dataStr = JSON.stringify(data);
+// function setLastAddedDataCookiePanggilUlang(data) {
+//     // Konversi data menjadi JSON string
+//     var dataStr = JSON.stringify(data);
 
-    // Set cookie dengan data terakhir
-    document.cookie = "lastAddedDataPanggilUlang=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
-}
+//     // Set cookie dengan data terakhir
+//     document.cookie = "lastAddedDataPanggilUlang=" + dataStr + "; expires=" + getCookieExpiration(1) + "; path=/";
+// }
 
-function getSavedLastAddedDataPanggilUlang() {
-    var name = "lastAddedDataPanggilUlang=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var cookieArray = decodedCookie.split(';');
-    for (var i = 0; i < cookieArray.length; i++) {
-        var cookie = cookieArray[i];
-        while (cookie.charAt(0) == ' ') {
-            cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) == 0) {
-            var dataStr = cookie.substring(name.length, cookie.length);
-            return JSON.parse(dataStr);
-        }
-    }
-    return null;
-}
+// function getSavedLastAddedDataPanggilUlang() {
+//     var name = "lastAddedDataPanggilUlang=";
+//     var decodedCookie = decodeURIComponent(document.cookie);
+//     var cookieArray = decodedCookie.split(';');
+//     for (var i = 0; i < cookieArray.length; i++) {
+//         var cookie = cookieArray[i];
+//         while (cookie.charAt(0) == ' ') {
+//             cookie = cookie.substring(1);
+//         }
+//         if (cookie.indexOf(name) == 0) {
+//             var dataStr = cookie.substring(name.length, cookie.length);
+//             return JSON.parse(dataStr);
+//         }
+//     }
+//     return null;
+// }
 
-//Check Panggil Ulang
-var lastAddedData = getSavedLastAddedDataPanggilUlang(); 
-function check_panggil_ulang(data) {
-	if (Array.isArray(data) && data.length > 0) {
-        var firstElement = data[0]; // Mengambil elemen pertama dari data
+// //Check Panggil Ulang
+// var lastAddedData = getSavedLastAddedDataPanggilUlang(); 
+// function check_panggil_ulang(data) {
+// 	if (Array.isArray(data) && data.length > 0) {
+//         var firstElement = data[0]; // Mengambil elemen pertama dari data
 
-        if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
-			console.log("TESTETSTE",data);
-            addAudio(firstElement);
+//         if (!lastAddedData || JSON.stringify(firstElement) !== JSON.stringify(lastAddedData)) {
+// 			console.log("TESTETSTE",data);
+//             addAudio(firstElement);
 
-            if (audio_ended) {
-                if (player) {
-                    current_volume = player.volume;
-                    new_volume = 5 / 100 * current_volume;
-                    console.log(current_volume);
-                    console.log(new_volume.toFixed(2));
-                    player.volume = new_volume.toFixed(2);
-                }
-                playSound();
-            }
+//             if (audio_ended) {
+//                 if (player) {
+//                     current_volume = player.volume;
+//                     new_volume = 5 / 100 * current_volume;
+//                     console.log(current_volume);
+//                     console.log(new_volume.toFixed(2));
+//                     player.volume = new_volume.toFixed(2);
+//                 }
+//                 playSound();
+//             }
 
-            lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
-            setLastAddedDataCookiePanggilUlang(lastAddedData); // Menyimpan data terakhir ke dalam cookie
-        }
-    } else {
-        // Tindakan yang harus diambil jika data kosong atau bukan array
-    }
+//             lastAddedData = firstElement; // Menyimpan data terakhir yang ditambahkan
+//             setLastAddedDataCookiePanggilUlang(lastAddedData); // Menyimpan data terakhir ke dalam cookie
+//         }
+//     } else {
+//         // Tindakan yang harus diambil jika data kosong atau bukan array
+//     }
     
-}
+// }
 
 
 

@@ -2,6 +2,13 @@
 	<div class="card-header">
 		<h5 class="card-title"><?=$title?></h5>
 	</div>
+	<style>
+        #preview {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 20px;
+        }
+    </style>
 	<div class="card-body">
 		<?php
 		helper ('html');
@@ -51,6 +58,17 @@
 					?>
 				</div>
 			</div>
+			<div class="row mb-3">
+				<label class="col-sm-3 col-md-2 col-lg-3 col-xl-2 col-form-label">Logo</label>
+				<div class="col-sm-5">
+				<div id="preview" data-src="<?php echo $antrian_kategori['logo']; ?>">
+					<?php if (!empty($antrian_kategori['logo'])): ?>
+						<img src="<?php echo $config->baseURL . 'public/images/logo/' . $antrian_kategori['logo']; ?>" style="max-width: 100%; max-height: 200px;">
+					<?php endif; ?>
+				</div>
+				<input type="file" class="form-control" name="logo" id="imageInput" accept="image/*" onchange="previewImage(event)">
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-sm-5">
 					<button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
@@ -60,3 +78,47 @@
 		</form>
 	</div>
 </div>
+
+<script>
+        function previewImage(event) {
+            var input = event.target;
+            var preview = document.getElementById('preview');
+
+            // Pastikan ada gambar yang dipilih
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Tampilkan gambar yang dipilih dalam elemen img
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '100%';
+                    img.style.maxHeight = '200px';
+
+                    // Bersihkan tampilan sebelumnya
+                    preview.innerHTML = '';
+
+                    // Tambahkan gambar ke dalam elemen div dengan id 'preview'
+                    preview.appendChild(img);
+                };
+
+                // Baca data gambar sebagai URL
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                // Jika tidak ada gambar yang dipilih, hapus tampilan sebelumnya
+				<?php
+                if (!empty($antrian_kategori['logo'])) {
+                    echo "var defaultImage = document.createElement('img');";
+                    echo "defaultImage.src = '" . $config->baseURL . 'public/images/logo/' . $antrian_kategori['logo'] . "';";
+                    echo "defaultImage.style.maxWidth = '100%';";
+                    echo "defaultImage.style.maxHeight = '200px';";
+                    echo "preview.innerHTML = '';";
+                    echo "preview.appendChild(defaultImage);";
+                } else {
+                    echo "preview.innerHTML = '';";
+                }
+            ?>
+                
+            }
+        }
+    </script>

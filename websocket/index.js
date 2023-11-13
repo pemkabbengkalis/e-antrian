@@ -126,7 +126,7 @@ function getLastAntrianAmbilUlang(ws,monitorId){
               LEFT JOIN antrian_detail USING(id_antrian_detail)
               LEFT JOIN antrian_kategori USING(id_antrian_kategori)
               LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
-              WHERE id_setting_layar = ? AND tanggal_panggil_ulang = ? AND waktu_panggil_ulang > ?`;
+              WHERE id_setting_layar = ? AND tanggal_panggil_ulang = ? AND waktu_panggil_ulang >= ?`;
               db.query(getPanggilUlang,[monitorId,currentDate,perubahan_terakhir],(error,results) => {
 
                 if(error){
