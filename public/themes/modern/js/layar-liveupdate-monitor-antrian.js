@@ -171,7 +171,7 @@ function check_and_update_data(name, data) {
 
 function getCookieExpiration(days) {
     var d = new Date();
-    d.setTime(d.getTime() + (days * 2 * 60 * 60 * 1000)); // Waktu kadaluwarsa dalam milidetik
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); // Waktu kadaluwarsa dalam milidetik
     var expires = "expires=" + d.toUTCString();
     return expires;
 }
