@@ -36,9 +36,9 @@
 					<label class="col-sm-3 col-md-2 col-lg-3 col-xl-2 col-form-label">Range Tanggal</label>
 					<div class="col-sm-7">
 						<div class="input-daterange input-group" id="datepicker">
-							<input type="text" class="input-sm form-control" name="tgl_awal" value="<?=set_value('tgl_awal', '01-01-2022')?>"/>
+							<input type="text" class="input-sm form-control" name="tgl_awal" value="<?=set_value('tgl_awal', date('d-m-Y'))?>"/>
 							<span class="input-group-text">s.d.</span>
-							<input type="text" class="input-sm form-control" name="tgl_akhir" value="<?=set_value('tgl_akhir', '31-01-2022')?>" />
+							<input type="text" class="input-sm form-control" name="tgl_akhir" value="<?=set_value('tgl_akhir', date('d-m-Y'))?>" />
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,19 @@
 				</div>
 			</form>
 			<?php
-
+			if (isset($_GET['tgl_awal']) && $antrian_rekap) {
+				$jumlahantrian = 0;
+				$jumlahdipanggil = 0;
+				foreach ($antrian_rekap as $val) {
+					$jumlahantrian += ($val['jml_antrian'] ?: 0);
+					$jumlahdipanggil += ($val['jml_dipanggil'] ?: 0);
+				}
+			?>
+			<div>Total Keseluruhan:</div>
+			<div> Jumlah Antrian : <?php print $jumlahantrian ?></div>
+			<div> Jumlah Dipanggil: <?php print $jumlahdipanggil ?> </div>
+			<?php
+			}
 			if (isset($_GET['tgl_awal']) && $antrian_rekap) {
 				
 				// echo '<pre>'; print_r($antrian_rekap);
