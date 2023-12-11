@@ -50,12 +50,15 @@ class LayarModel extends \App\Models\BaseModel
 	}
 	
 	public function getTujuanByIdLayarSetting($id) {
-		$sql = 'SELECT *, antrian_kategori.aktif AS kategori_aktif, antrian_detail.aktif AS tujuan_aktif
-				FROM antrian_kategori
-				LEFT JOIN antrian_detail USING(id_antrian_kategori)
-				LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
-				LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
-				WHERE id_setting_layar = ? ORDER BY nama_antrian_tujuan ASC';
+		$sql = 'SELECT *, 
+                   antrian_kategori.aktif AS kategori_aktif, 
+                   antrian_detail.aktif AS tujuan_aktif
+            FROM antrian_kategori
+            LEFT JOIN antrian_detail USING(id_antrian_kategori)
+            LEFT JOIN antrian_tujuan USING(id_antrian_tujuan)
+            LEFT JOIN setting_layar_detail USING(id_antrian_kategori)
+            WHERE id_setting_layar = ? 
+            ORDER BY LENGTH(nama_antrian_tujuan), nama_antrian_tujuan ASC';
 				
 		/* $sql = 'SELECT id_antrian_detail, COUNT(*) AS jml_dipanggil FROM antrian_panggil_detail 
 				LEFT JOIN antrian_panggil USING(id_antrian_panggil)
