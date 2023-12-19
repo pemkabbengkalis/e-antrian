@@ -430,8 +430,9 @@ header .nav-account .dropdown-menu.show {
     width: 250px;
     padding: 20px 10px;
 }
-.dropdown-profile .avatar img{
-	border-radius: 50%;
+.dropdown-profile .avatar img {
+    width: 40%;
+    border-radius: 50%;
 }
 
 /* .account-wrapper>ul>li {
