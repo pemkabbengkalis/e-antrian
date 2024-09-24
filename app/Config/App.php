@@ -23,13 +23,13 @@ class App extends BaseConfig
      * environments.
      */
     // public $baseURL = 'https://jagowebdev.com/demo/admin-template-ci4/';
-	public $baseURL = 'https://10.20.30.252:8090/preview/localhost/';
+	public $baseURL = 'https://e-antrian.bengkaliskab.go.id/';
     //LOCAL
 	//public $baseURL = 'http://localhost:8888/e-antrian/';
 	
 	public $imagesPath = ROOTPATH . 'public/images/';
 	// public $imagesURL = 'https://jagowebdev.com/demo/admin-template-ci4/public/images/';
-	public $imagesURL = 'https://10.20.30.252:8090/preview/localhost/public/images/';
+	public $imagesURL = 'https://e-antrian.bengkaliskab.go.ids/public/images/';
     //LOCAL
     // public $imagesURL = 'http://localhost:8888/e-antrian/public/images/';
 	
