@@ -35,7 +35,7 @@ const wss = new WebSocketServer({
 
 //Env Server
 const db = mysql.createPool({
-  host: '202.46.70.251',
+  host: 'localhost',
   user: 'eant_rian',
   password: 'Antrian@2024!',
   database: 'eant_rian',
