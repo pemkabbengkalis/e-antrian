@@ -9,7 +9,7 @@ current_volume = '';
 
 
 //WEBSOCKET SERVER
-var websocketURL = 'wss://202.46.70.251:8443?id=' + $('#id-setting-layar').text();
+var websocketURL = 'wss://e-antrian.bengkaliskab.go.id:8443?id=' + $('#id-setting-layar').text();
 
 //LOCAL
 // var websocketURL = 'wss://localhost:8443?id=' + $('#id-setting-layar').text();
