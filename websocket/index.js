@@ -53,8 +53,8 @@ const clients = {};
 
 //ONLINE KEY
 const server = https.createServer({
-  key: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/key.pem'),
-  cert: fs.readFileSync('/home/localhost/public_html/e-antrian/websocket/cert.pem'),
+  key: fs.readFileSync('/home/e-antrian.bengkaliskab.go.id/public_html/websocket/ssl_private_key.pem'),
+  cert: fs.readFileSync('/home/e-antrian.bengkaliskab.go.id/public_html/websocket/ssl_certificate.pem'),
 
 });
 
